@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import profile from "@/assets/profile-main.asset.json";
 import { LoopText } from "@/components/LoopText";
 import { ExpandingPill } from "@/components/ExpandingPill";
+import { CONTACT_EMAIL, GMAIL_COMPOSE } from "@/lib/contact";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -62,8 +63,18 @@ function Home() {
             <div className="ml-2">
               <ExpandingPill
                 actions={[
-                  { icon: "✉", label: "Email", onClick: () => (window.location.href = "mailto:eustacemadawu1@gmail.com") },
-                  { icon: "☎", label: "Call", onClick: () => (window.location.href = "tel:+263786822202") },
+                  {
+                    icon: "✉",
+                    label: "Email",
+                    onClick: () =>
+                      (window.location.href = `mailto:${CONTACT_EMAIL}`),
+                  },
+                  {
+                    icon: "▶",
+                    label: "Gmail",
+                    onClick: () =>
+                      window.open(GMAIL_COMPOSE, "_blank", "noopener,noreferrer"),
+                  },
                 ]}
               />
             </div>
@@ -118,6 +129,8 @@ function Home() {
           </div>
         </motion.div>
       </section>
+
+
 
       <section className="mt-24 grid gap-4 md:grid-cols-3">
         {[

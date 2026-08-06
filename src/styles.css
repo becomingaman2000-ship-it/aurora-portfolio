@@ -34,6 +34,7 @@
   --color-aurora-2: var(--aurora-2);
   --color-aurora-3: var(--aurora-3);
   --color-aurora-4: var(--aurora-4);
+  --color-aurora-5: var(--aurora-5);
   --color-glass: var(--glass);
   --color-glass-border: var(--glass-border);
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
@@ -67,6 +68,7 @@
   --aurora-2: oklch(0.72 0.18 290);   /* purple */
   --aurora-3: oklch(0.82 0.08 250);   /* silver blue */
   --aurora-4: oklch(0.92 0.05 60);    /* peach */
+  --aurora-5: oklch(0.64 0.2 25);     /* red */
 
   --glass: oklch(1 0 0 / 0.55);
   --glass-border: oklch(1 0 0 / 0.5);
@@ -97,9 +99,43 @@
   --aurora-2: oklch(0.5 0.22 290);
   --aurora-3: oklch(0.42 0.1 250);
   --aurora-4: oklch(0.28 0.06 260);
+  --aurora-5: oklch(0.55 0.21 25);
 
   --glass: oklch(0.22 0.03 260 / 0.5);
   --glass-border: oklch(1 0 0 / 0.1);
+}
+
+/* Neutral: gold & coffee base with peachy-gold variations */
+.neutral {
+  --background: oklch(0.955 0.028 76);      /* peachy gold cream */
+  --foreground: oklch(0.26 0.045 58);       /* deep coffee */
+  --card: oklch(0.975 0.022 78);
+  --card-foreground: oklch(0.26 0.045 58);
+  --popover: oklch(0.975 0.022 78);
+  --popover-foreground: oklch(0.26 0.045 58);
+  --primary: oklch(0.68 0.115 78);          /* burnished gold */
+  --primary-foreground: oklch(0.99 0.012 80);
+  --secondary: oklch(0.9 0.04 72);          /* peachy gold */
+  --secondary-foreground: oklch(0.3 0.05 58);
+  --muted: oklch(0.92 0.032 74);
+  --muted-foreground: oklch(0.48 0.045 60);
+  --accent: oklch(0.46 0.06 52);            /* coffee */
+  --accent-foreground: oklch(0.97 0.02 80);
+  --destructive: oklch(0.58 0.2 27);
+  --destructive-foreground: oklch(0.98 0.012 80);
+  --border: oklch(0.74 0.06 70 / 0.45);
+  --input: oklch(0.86 0.05 72);
+  --ring: oklch(0.68 0.115 78);
+
+  /* Special contrast auroras */
+  --aurora-1: oklch(0.6 0.21 300);          /* purple */
+  --aurora-2: oklch(0.62 0.19 255);         /* blue */
+  --aurora-3: oklch(0.73 0.16 168);         /* spring ocean green */
+  --aurora-4: oklch(0.84 0.015 250);        /* silver */
+  --aurora-5: oklch(0.6 0.21 25);           /* red */
+
+  --glass: oklch(1 0.012 80 / 0.6);
+  --glass-border: oklch(0.85 0.05 78 / 0.7);
 }
 
 @layer base {
@@ -177,3 +213,26 @@
 .animate-aurora-3 { animation: aurora-drift-3 34s ease-in-out infinite; }
 .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
 .animate-fade-in { animation: fade-in 0.7s ease-out both; }
+
+/* --- Scroll ribbon (site-wide animated stroke) --- */
+@keyframes ribbon-hue {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(25deg); }
+}
+@keyframes ribbon-dash {
+  to { stroke-dashoffset: -400; }
+}
+.animate-ribbon-hue { animation: ribbon-hue 18s ease-in-out infinite; }
+.animate-ribbon-dash { animation: ribbon-dash 12s linear infinite; }
+
+/* Aurora flow along the ribbon gradient */
+@keyframes ribbon-aurora-shift {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-6%, 4%) rotate(8deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+.animate-ribbon-aurora {
+  animation: ribbon-aurora-shift 26s ease-in-out infinite;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}

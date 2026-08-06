@@ -3,23 +3,38 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const THEME_KEY = "eustace-theme";
 
+export type Theme = "light" | "dark" | "neutral";
+const ORDER: Theme[] = ["light", "dark", "neutral"];
+const ICONS: Record<Theme, string> = { light: "☀", dark: "☾", neutral: "◆" };
+const LABELS: Record<Theme, string> = {
+  light: "Light",
+  dark: "Dark",
+  neutral: "Neutral",
+};
+
+function apply(theme: Theme) {
+  const root = document.documentElement;
+  root.classList.toggle("dark", theme === "dark");
+  root.classList.toggle("neutral", theme === "neutral");
+}
+
 export function useTheme() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<Theme>("light");
+
   useEffect(() => {
-    const stored = (typeof window !== "undefined" && localStorage.getItem(THEME_KEY)) as
-      | "light"
-      | "dark"
-      | null;
-    const initial = stored ?? "light";
+    const stored = localStorage.getItem(THEME_KEY) as Theme | null;
+    const initial: Theme = stored && ORDER.includes(stored) ? stored : "light";
     setTheme(initial);
-    document.documentElement.classList.toggle("dark", initial === "dark");
+    apply(initial);
   }, []);
+
   const toggle = () => {
-    const next = theme === "dark" ? "light" : "dark";
+    const next = ORDER[(ORDER.indexOf(theme) + 1) % ORDER.length] as Theme;
     setTheme(next);
-    document.documentElement.classList.toggle("dark", next === "dark");
+    apply(next);
     localStorage.setItem(THEME_KEY, next);
   };
+
   return { theme, toggle };
 }
 
@@ -28,7 +43,8 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      aria-label="Toggle theme"
+      aria-label={`Theme: ${LABELS[theme]} — click to switch`}
+      title={`${LABELS[theme]} mode`}
       className="glass relative flex h-10 w-10 items-center justify-center rounded-full transition-transform active:scale-95 hover:scale-110"
     >
       <AnimatePresence mode="wait" initial={false}>
@@ -40,7 +56,7 @@ export function ThemeToggle() {
           transition={{ duration: 0.25 }}
           className="text-lg"
         >
-          {theme === "dark" ? "☾" : "☀"}
+          {ICONS[theme]}
         </motion.span>
       </AnimatePresence>
     </button>

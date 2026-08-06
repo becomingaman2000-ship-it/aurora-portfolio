@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -12,6 +13,8 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { AuroraBackground } from "../components/AuroraBackground";
+import { ScrollStroke, type StrokeVariant } from "../components/ScrollStroke";
+import { ScrollDissolve } from "../components/ScrollDissolve";
 import { Nav } from "../components/Nav";
 
 function NotFoundComponent() {
@@ -109,14 +112,30 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+const STROKE_BY_PATH: Record<string, StrokeVariant> = {
+  "/": "ribbon",
+  "/about": "orbit",
+  "/services": "wave",
+  "/projects": "zigzag",
+  "/leadership": "arc",
+  "/contact": "spiral",
+};
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const variant = STROKE_BY_PATH[pathname] ?? "wave";
+
   return (
     <QueryClientProvider client={queryClient}>
       <AuroraBackground />
       <Nav />
       <main className="pt-28 md:pt-24 pb-24 px-4 sm:px-6 md:px-10 max-w-7xl mx-auto">
-        <Outlet />
+        <ScrollStroke key={pathname} variant={variant}>
+          <ScrollDissolve key={pathname}>
+            <Outlet />
+          </ScrollDissolve>
+        </ScrollStroke>
       </main>
       <footer className="border-t border-border/40 py-8 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} Eustace Madawu · Harare, Zimbabwe

@@ -92,7 +92,15 @@ export function ScrollStroke({
           style={{ willChange: "transform" }}
         >
           <defs>
-            <linearGradient id={gid} x1="0" y1="0" x2="1" y2="1">
+            <linearGradient
+              id={gid}
+              x1="0"
+              y1="0"
+              x2="1"
+              y2="1"
+              className="animate-ribbon-aurora"
+              gradientUnits="objectBoundingBox"
+            >
               <stop offset="0%" stopColor="var(--color-aurora-2)" />
               <stop offset="28%" stopColor="var(--color-aurora-1)" />
               <stop offset="55%" stopColor="var(--color-aurora-3)" />
@@ -129,9 +137,47 @@ export function ScrollStroke({
               />
             ))}
           </g>
+
+          {/* Particles riding along the ribbons */}
+          {!reduced && (
+            <g>
+              {shapes
+                .filter((s) => !s.dash)
+                .slice(0, 3)
+                .flatMap((s, si) =>
+                  [0, 1, 2, 3].map((pi) => {
+                    const dur = 9 + si * 3 + pi * 1.7;
+                    return (
+                      <circle
+                        key={`${si}-${pi}`}
+                        r={2.4 + (pi % 3)}
+                        fill={`url(#${gid})`}
+                        opacity={0.75}
+                      >
+                        <animateMotion
+                          dur={`${dur}s`}
+                          begin={`${-pi * (dur / 4)}s`}
+                          repeatCount="indefinite"
+                          path={s.d}
+                          rotate="auto"
+                        />
+                        <animate
+                          attributeName="opacity"
+                          values="0;0.85;0"
+                          dur={`${dur}s`}
+                          begin={`${-pi * (dur / 4)}s`}
+                          repeatCount="indefinite"
+                        />
+                      </circle>
+                    );
+                  }),
+                )}
+            </g>
+          )}
         </svg>
       </div>
       <div className="relative z-10">{children}</div>
     </section>
   );
 }
+

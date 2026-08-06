@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { AuroraBackground } from "../components/AuroraBackground";
 import { ScrollStroke, type StrokeVariant } from "../components/ScrollStroke";
+import { ScrollDissolve } from "../components/ScrollDissolve";
 import { Nav } from "../components/Nav";
 
 function NotFoundComponent() {

@@ -224,3 +224,18 @@
 }
 .animate-ribbon-hue { animation: ribbon-hue 18s ease-in-out infinite; }
 .animate-ribbon-dash { animation: ribbon-dash 12s linear infinite; }
+
+/* Aurora flow along the ribbon gradient */
+@keyframes ribbon-aurora {
+  0%, 100% { gradientTransform: rotate(0deg); }
+}
+@keyframes ribbon-aurora-shift {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-6%, 4%) rotate(8deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+.animate-ribbon-aurora {
+  animation: ribbon-aurora-shift 26s ease-in-out infinite;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}

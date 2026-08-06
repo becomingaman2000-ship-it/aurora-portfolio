@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import img from "@/assets/eustace-2.asset.json";
 import img2 from "@/assets/eustace-3.asset.json";
-import { ScrollStroke } from "@/components/ScrollStroke";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -59,7 +58,7 @@ const skills = {
 function About() {
   return (
     <div className="animate-fade-in space-y-20">
-      <ScrollStroke>
+      <>
         <section className="grid gap-10 md:grid-cols-[1fr_1.2fr] items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -108,7 +107,7 @@ function About() {
             </div>
           </div>
         </section>
-      </ScrollStroke>
+      </>
 
       <section>
         <div className="mb-8 flex items-end justify-between gap-6 flex-wrap">

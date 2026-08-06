@@ -15,6 +15,7 @@ export function ScrollDissolve({ children }: { children: ReactNode }) {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let frame = 0;
+    let ready = false;
     let items: { el: HTMLElement; last: number }[] = [];
 
     const collect = () => {
@@ -25,14 +26,18 @@ export function ScrollDissolve({ children }: { children: ReactNode }) {
         if (grand.length > 1) targets.push(...grand);
         else targets.push(child);
       }
-      items = targets.map((el) => {
-        el.style.willChange = "opacity, filter, transform";
-        return { el, last: -1 };
-      });
+      items = targets
+        // leave framer-motion-controlled blocks alone so the two never fight
+        .filter((el) => !el.style.opacity && !el.style.transform)
+        .map((el) => {
+          el.style.willChange = "opacity, filter, transform";
+          return { el, last: -1 };
+        });
     };
 
     const update = () => {
       frame = 0;
+      if (!ready) return;
       const vh = window.innerHeight;
       for (const item of items) {
         const r = item.el.getBoundingClientRect();
@@ -55,11 +60,15 @@ export function ScrollDissolve({ children }: { children: ReactNode }) {
     };
 
     const onScroll = () => {
-      if (!frame) frame = requestAnimationFrame(update);
+      if (ready && !frame) frame = requestAnimationFrame(update);
     };
 
-    collect();
-    update();
+    // wait for hydration (incl. lazily hydrated routes) before touching styles
+    const start = window.setTimeout(() => {
+      ready = true;
+      collect();
+      update();
+    }, 400);
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll, { passive: true });
@@ -72,6 +81,7 @@ export function ScrollDissolve({ children }: { children: ReactNode }) {
     mo.observe(root, { childList: true, subtree: false });
 
     return () => {
+      window.clearTimeout(start);
       if (frame) cancelAnimationFrame(frame);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);

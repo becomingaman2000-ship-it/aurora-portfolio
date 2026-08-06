@@ -64,11 +64,16 @@ export function ScrollDissolve({ children }: { children: ReactNode }) {
     };
 
     // wait for hydration (incl. lazily hydrated routes) before touching styles
-    const start = window.setTimeout(() => {
-      ready = true;
-      collect();
-      update();
-    }, 400);
+    let start = 0;
+    const begin = () => {
+      start = window.setTimeout(() => {
+        ready = true;
+        collect();
+        update();
+      }, 600);
+    };
+    if (document.readyState === "complete") begin();
+    else window.addEventListener("load", begin, { once: true });
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll, { passive: true });
@@ -82,6 +87,7 @@ export function ScrollDissolve({ children }: { children: ReactNode }) {
 
     return () => {
       window.clearTimeout(start);
+      window.removeEventListener("load", begin);
       if (frame) cancelAnimationFrame(frame);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);

@@ -131,7 +131,9 @@ function RootComponent() {
       <Nav />
       <main className="pt-28 md:pt-24 pb-24 px-4 sm:px-6 md:px-10 max-w-7xl mx-auto">
         <ScrollStroke key={pathname} variant={variant}>
-          <Outlet />
+          <ScrollDissolve key={pathname}>
+            <Outlet />
+          </ScrollDissolve>
         </ScrollStroke>
       </main>
       <footer className="border-t border-border/40 py-8 text-center text-xs text-muted-foreground">

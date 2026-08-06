@@ -19,8 +19,8 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <div className="animate-fade-in">
-      <section className="grid gap-10 items-center min-h-[70vh]">
-        <div className="space-y-6 max-w-3xl">
+      <section className="grid gap-10 md:grid-cols-[1.15fr_1fr] items-center min-h-[70vh]">
+        <div className="space-y-6">
           <motion.span
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}

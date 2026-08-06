@@ -226,9 +226,6 @@
 .animate-ribbon-dash { animation: ribbon-dash 12s linear infinite; }
 
 /* Aurora flow along the ribbon gradient */
-@keyframes ribbon-aurora {
-  0%, 100% { gradientTransform: rotate(0deg); }
-}
 @keyframes ribbon-aurora-shift {
   0% { transform: translate(0, 0) rotate(0deg); }
   50% { transform: translate(-6%, 4%) rotate(8deg); }

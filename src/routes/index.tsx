@@ -95,7 +95,41 @@ function Home() {
             ))}
           </div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, rotate: -2 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 0.9, ease: [0.32, 0.72, 0, 1] }}
+          className="relative"
+        >
+          <div className="animate-float-slow relative mx-auto aspect-[4/5] w-full max-w-md">
+            <div
+              className="absolute inset-0 rounded-[2.5rem] blur-2xl opacity-70"
+              style={{
+                background:
+                  "conic-gradient(from 180deg, var(--color-aurora-1), var(--color-aurora-2), var(--color-aurora-3), var(--color-aurora-1))",
+              }}
+            />
+            <div className="glass-strong relative overflow-hidden rounded-[2.5rem] p-2">
+              <img
+                src={profile.url}
+                alt="Eustace Madawu portrait"
+                className="h-full w-full rounded-[2rem] object-cover"
+              />
+              <div className="absolute bottom-6 left-6 right-6 glass rounded-2xl p-3 flex items-center justify-between text-xs">
+                <div>
+                  <div className="font-semibold">Eustace Madawu</div>
+                  <div className="text-muted-foreground">Harare, Zimbabwe</div>
+                </div>
+                <span className="rounded-full bg-primary/20 px-2 py-1 text-primary">
+                  Tier SSS
+                </span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </section>
+
 
 
       <section className="mt-24 grid gap-4 md:grid-cols-3">

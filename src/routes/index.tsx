@@ -96,8 +96,8 @@ function Home() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, rotate: -2 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.9, ease: [0.32, 0.72, 0, 1] }}
           className="relative"
         >

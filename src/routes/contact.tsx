@@ -3,26 +3,28 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import img from "@/assets/eustace-5.asset.json";
 import { CONTACT_EMAIL, gmailCompose } from "@/lib/contact";
+import { absUrl, canonical } from "@/lib/site";
 import { assetUrl } from "@/lib/asset";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Eustace Madawu" },
+      { title: "Contact — Hire a Freelance Software & Website Engineer" },
       {
         name: "description",
         content:
-          "Get in touch with Eustace Madawu for engineering engagements, product builds, or leadership opportunities.",
+          "Contact Eustace Madawu to hire a freelance software & website engineer: quotes, timelines and delivery plans — remote worldwide, based in Harare, Zimbabwe.",
       },
-      { property: "og:title", content: "Contact — Eustace Madawu" },
+      { property: "og:title", content: "Contact — Hire a Freelance Software & Website Engineer" },
       {
         property: "og:description",
-        content:
-          "Send a message straight from Gmail — engineering engagements, product builds and partnerships.",
+        content: "Get a quote for your website or software build — remote engagements worldwide.",
       },
-      { property: "og:image", content: assetUrl(img.url) },
-      { name: "twitter:image", content: assetUrl(img.url) },
+      { property: "og:url", content: absUrl("/contact") },
+      { property: "og:image", content: absUrl(img.url) },
+      { name: "twitter:image", content: absUrl(img.url) },
     ],
+    links: [canonical("/contact")],
   }),
   component: Contact,
 });

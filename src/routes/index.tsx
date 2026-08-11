@@ -4,15 +4,57 @@ import profile from "@/assets/profile-main.asset.json";
 import { LoopText } from "@/components/LoopText";
 import { ExpandingPill } from "@/components/ExpandingPill";
 import { CONTACT_EMAIL, GMAIL_COMPOSE } from "@/lib/contact";
+import { absUrl, canonical, faqJsonLd } from "@/lib/site";
 import { assetUrl } from "@/lib/asset";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const FAQ = [
+  {
+    q: "Who is Eustace Madawu?",
+    a: "Eustace Madawu is a freelance software & website engineer from Harare, Zimbabwe — a B.Tech (Hons) Electronic Commerce student at the Harare Institute of Technology, technopreneur, trained counsellor and event organiser. He designs, builds and ships full-stack products end-to-end for clients worldwide.",
+  },
+  {
+    q: "Can I hire Eustace Madawu to build a website or software?",
+    a: "Yes. Eustace takes freelance website and software engineering engagements — marketing sites, e-commerce stores, full-stack web applications and product builds — working remotely with clients anywhere in the world. Email him with your idea and scope to get a quote and timeline.",
+  },
+  {
+    q: "What technologies does he work with?",
+    a: "Modern, production-grade stacks: React, TypeScript, Node.js, TanStack Start, Tailwind CSS, SQL and NoSQL databases, payment integrations and cloud deployment — covering the full pipeline from UI/UX design through frontend, backend, database and launch.",
+  },
+  {
+    q: "What products has Eustace built?",
+    a: "Shipped and live: Makeke — a B2B logistics and marketplace platform connecting bakeries and pastry producers with retailers, cafés and event vendors in African cities — and Hit Campus Guide, an interactive way-finder for the Harare Institute of Technology campus.",
+  },
+  {
+    q: "Does he work with clients outside Zimbabwe?",
+    a: "Yes. Although based in Harare, he works fully remote and takes engagements from anywhere in the world — with clear milestones, regular updates and agreed deliverables communicated over email.",
+  },
+  {
+    q: "How much does a website or software project cost?",
+    a: "Pricing depends on scope: a marketing site, a web app and a full product build each differ in effort. Share your requirements by email and you'll receive a clear quote, timeline and delivery plan before any commitment.",
+  },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Eustace Madawu — Software & Website Engineer" },
-      { property: "og:image", content: assetUrl(profile.url) },
-      { name: "twitter:image", content: assetUrl(profile.url) },
+      { title: "Eustace Madawu — Freelance Software & Website Engineer" },
+      {
+        name: "description",
+        content:
+          "Hire Eustace Madawu — freelance software & website engineer from Harare, Zimbabwe, working remotely worldwide. Websites, web apps and full-stack products designed, built and shipped.",
+      },
+      { property: "og:url", content: absUrl("/") },
+      { property: "og:image", content: absUrl(profile.url) },
+      { name: "twitter:image", content: absUrl(profile.url) },
     ],
+    links: [canonical("/")],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQ)) }],
   }),
   component: Home,
 });
@@ -153,6 +195,30 @@ function Home() {
             </div>
           </Link>
         ))}
+      </section>
+
+      <section className="mt-24 max-w-3xl mx-auto">
+        <div className="text-xs uppercase tracking-widest text-primary mb-2">FAQ</div>
+        <h2 className="text-3xl md:text-4xl font-semibold">
+          Hiring a software or website engineer?
+        </h2>
+        <p className="mt-3 text-muted-foreground">
+          Straight answers to the questions clients ask most.
+        </p>
+        <Accordion type="single" collapsible className="mt-6 glass rounded-3xl px-6">
+          {FAQ.map((f, i) => (
+            <AccordionItem key={f.q} value={`faq-${i}`}>
+              <AccordionTrigger className="text-left text-base font-medium">{f.q}</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+        <p className="mt-6 text-sm text-muted-foreground">
+          Ready when you are —{" "}
+          <a className="text-primary underline underline-offset-4" href={`mailto:${CONTACT_EMAIL}`}>
+            {CONTACT_EMAIL}
+          </a>
+        </p>
       </section>
     </div>
   );

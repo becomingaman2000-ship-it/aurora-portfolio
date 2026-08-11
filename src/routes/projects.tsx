@@ -8,21 +8,24 @@ import nav1 from "@/assets/nav-1.asset.json";
 import nav2 from "@/assets/nav-2.asset.json";
 import nav3 from "@/assets/nav-3.asset.json";
 import img from "@/assets/eustace-5.asset.json";
+import { absUrl, canonical } from "@/lib/site";
 import { assetUrl } from "@/lib/asset";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects — Eustace Madawu" },
+      { title: "Projects & Products by Eustace Madawu — Makeke, Hit Campus Guide" },
       {
         name: "description",
         content:
-          "Selected work: Makeke — a B2B logistics platform for bakeries — and Hit Campus Guide.",
+          "Products engineered by Eustace Madawu: Makeke — a B2B pastry logistics marketplace — and Hit Campus Guide, an interactive campus way-finder. Screenshots and pitch video.",
       },
-      { property: "og:title", content: "Projects — Eustace Madawu" },
-      { property: "og:image", content: assetUrl(makeke1.url) },
-      { name: "twitter:image", content: assetUrl(makeke1.url) },
+      { property: "og:title", content: "Projects & Products — Eustace Madawu" },
+      { property: "og:url", content: absUrl("/projects") },
+      { property: "og:image", content: absUrl(makeke1.url) },
+      { name: "twitter:image", content: absUrl(makeke1.url) },
     ],
+    links: [canonical("/projects")],
   }),
   component: Projects,
 });

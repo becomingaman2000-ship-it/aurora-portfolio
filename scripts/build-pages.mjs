@@ -47,6 +47,7 @@ const MANAGED = [
   "robots.txt",
   "favicon.ico",
   "apple-touch-icon.png",
+  "llms.txt",
 ];
 
 function run(cmd, args, env = {}) {

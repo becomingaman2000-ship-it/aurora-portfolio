@@ -1,21 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import img from "@/assets/eustace-6.asset.json";
+import { absUrl, canonical } from "@/lib/site";
 import { assetUrl } from "@/lib/asset";
 
 export const Route = createFileRoute("/leadership")({
   head: () => ({
     meta: [
-      { title: "Leadership — Eustace Madawu" },
+      { title: "Leadership & Community — Eustace Madawu" },
       {
         name: "description",
         content:
           "Trusted with people, programmes, and institutional responsibility — counselling, head-boy leadership, and event organising.",
       },
-      { property: "og:title", content: "Leadership — Eustace Madawu" },
-      { property: "og:image", content: assetUrl(img.url) },
-      { name: "twitter:image", content: assetUrl(img.url) },
+      { property: "og:title", content: "Leadership & Community — Eustace Madawu" },
+      { property: "og:url", content: absUrl("/leadership") },
+      { property: "og:image", content: absUrl(img.url) },
+      { name: "twitter:image", content: absUrl(img.url) },
     ],
+    links: [canonical("/leadership")],
   }),
   component: Leadership,
 });

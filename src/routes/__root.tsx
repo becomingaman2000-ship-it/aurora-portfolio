@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { assetUrl } from "../lib/asset";
+import { SITE_URL, personJsonLd, websiteJsonLd } from "../lib/site";
 import { AuroraBackground } from "../components/AuroraBackground";
 import { ScrollStroke, type StrokeVariant } from "../components/ScrollStroke";
 import { ScrollDissolve } from "../components/ScrollDissolve";
@@ -63,21 +64,35 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Eustace Madawu — Software & Website Engineer" },
+      {
+        name: "robots",
+        content: "index, follow, max-image-preview:large, max-snippet:-1",
+      },
+      { title: "Eustace Madawu — Freelance Software & Website Engineer" },
       {
         name: "description",
         content:
-          "Portfolio of Eustace Madawu — software & website engineer, technopreneur, counsellor and event organiser based in Harare, Zimbabwe.",
+          "Hire Eustace Madawu — freelance software & website engineer from Harare, Zimbabwe, working remotely worldwide. Websites, web apps and full-stack products designed, built and shipped.",
       },
       { name: "author", content: "Eustace Madawu" },
-      { property: "og:title", content: "Eustace Madawu — Software & Website Engineer" },
+      { property: "og:site_name", content: "Eustace Madawu — Portfolio" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:title", content: "Eustace Madawu — Freelance Software & Website Engineer" },
       {
         property: "og:description",
         content:
-          "Full-stack websites, software systems, and product design. Available for engagements worldwide.",
+          "Full-stack websites, software systems, and product design. Available for freelance engagements worldwide.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: `${SITE_URL}/assets/profile-main.jpg` },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Eustace Madawu — Freelance Software & Website Engineer" },
+      {
+        name: "twitter:description",
+        content:
+          "Freelance software & website engineer from Harare, Zimbabwe — available for hire worldwide.",
+      },
+      { name: "twitter:image", content: `${SITE_URL}/assets/profile-main.jpg` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -88,6 +103,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [personJsonLd(), websiteJsonLd()],
+        }),
       },
     ],
   }),

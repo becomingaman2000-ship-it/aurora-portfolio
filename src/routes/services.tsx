@@ -1,20 +1,35 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import img from "@/assets/eustace-4.asset.json";
+import { absUrl, canonical, professionalServiceJsonLd } from "@/lib/site";
 import { assetUrl } from "@/lib/asset";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Eustace Madawu" },
+      { title: "Services — Hire a Software & Website Engineer | Eustace Madawu" },
       {
         name: "description",
         content:
-          "Website engineering, software engineering, product design, data & business intelligence — plus counselling and event planning services.",
+          "Hire freelance engineer Eustace Madawu: website engineering, software engineering, product design, databases, payments and data — remote worldwide, clear quotes.",
       },
-      { property: "og:title", content: "Services — Eustace Madawu" },
-      { property: "og:image", content: assetUrl(img.url) },
-      { name: "twitter:image", content: assetUrl(img.url) },
+      {
+        property: "og:title",
+        content: "Services — Hire a Software & Website Engineer | Eustace Madawu",
+      },
+      { property: "og:url", content: absUrl("/services") },
+      { property: "og:image", content: absUrl(img.url) },
+      { name: "twitter:image", content: absUrl(img.url) },
+    ],
+    links: [canonical("/services")],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          ...professionalServiceJsonLd(),
+        }),
+      },
     ],
   }),
   component: Services,

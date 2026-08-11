@@ -2,21 +2,24 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import img from "@/assets/eustace-2.asset.json";
 import img2 from "@/assets/eustace-3.asset.json";
+import { absUrl, canonical } from "@/lib/site";
 import { assetUrl } from "@/lib/asset";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Eustace Madawu" },
+      { title: "About — Eustace Madawu, Freelance Software & Website Engineer" },
       {
         name: "description",
         content:
-          "Software & website engineer, technopreneur, counsellor and event organiser based in Harare, Zimbabwe.",
+          "About Eustace Madawu — freelance software & website engineer from Harare, Zimbabwe: skills, education, languages and the story behind the shipped products.",
       },
       { property: "og:title", content: "About — Eustace Madawu" },
-      { property: "og:image", content: assetUrl(img.url) },
-      { name: "twitter:image", content: assetUrl(img.url) },
+      { property: "og:url", content: absUrl("/about") },
+      { property: "og:image", content: absUrl(img.url) },
+      { name: "twitter:image", content: absUrl(img.url) },
     ],
+    links: [canonical("/about")],
   }),
   component: About,
 });

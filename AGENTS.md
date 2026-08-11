@@ -9,4 +9,9 @@
   points into `public/assets/`. Keep manifest URLs and files in sync.
 - Routes are file-based in `src/routes/`; `src/routeTree.gen.ts` is generated
   — never edit it by hand.
+- The repo ROOT contains the generated GitHub Pages export (index.html,
+  <route>/index.html, assets/, …) because Pages serves this branch from "/".
+  Regenerate it ONLY via `npm run deploy:pages` (see scripts/build-pages.mjs);
+  never hand-edit it, and never leave a root index.html around before running
+  `vite build` (npm run build guards this via scripts/build-safe.mjs).
 - Verify with `npm run build` (produces `.output/`) before finishing changes.

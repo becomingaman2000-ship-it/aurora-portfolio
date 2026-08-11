@@ -31,6 +31,11 @@ npm start          # serves the production build (PORT/HOST env respected)
 The `.output/` folder is fully self-contained — copy it to any Node 20.19+
 host and run `node .output/server/index.mjs`.
 
+`npm run build` wraps `vite build` with a guard (`scripts/build-safe.mjs`)
+that momentarily hides the committed GitHub Pages export from the repo root
+during the build — otherwise Vite would treat `index.html` as a static
+renderer template and the server would only ever serve the home page.
+
 ## Deploy
 
 The deployment target is chosen **at build time** via `NITRO_PRESET`:

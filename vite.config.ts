@@ -25,8 +25,8 @@ import { nitro } from "nitro/vite";
 const nitroPreset = process.env.NITRO_PRESET || "node-server";
 // Deploy base path — "/" normally, "/<repo>/" for GitHub Pages project sites.
 const basePath = process.env.VITE_BASE_PATH || "/";
-// Static prerender (for GitHub Pages et al.) when PRERENDER=true.
-const shouldPrerender = process.env.PRERENDER === "true";
+// (Static export for GitHub Pages is produced by scripts/build-pages.mjs,
+// which mirrors the built server — see that script for details.)
 
 export default defineConfig(({ command, mode }) => {
   // Expose VITE_* env vars to server-side bundles as well (Vite only injects
@@ -81,21 +81,7 @@ export default defineConfig(({ command, mode }) => {
       }),
       viteReact(),
       // Build-only: produce the deployable server in .output/ (NITRO_PRESET).
-      // With PRERENDER=true, additionally crawl the site and emit static HTML
-      // into .output/public/ (used by the GitHub Pages deploy script).
-      command === "build"
-        ? nitro({
-            preset: nitroPreset,
-            ...(shouldPrerender
-              ? {
-                  prerender: {
-                    crawlLinks: true,
-                    routes: ["/", "/sitemap.xml"],
-                  },
-                }
-              : {}),
-          })
-        : null,
+      command === "build" ? nitro({ preset: nitroPreset }) : null,
     ].filter(Boolean),
   };
 });

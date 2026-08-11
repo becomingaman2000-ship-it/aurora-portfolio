@@ -33,6 +33,7 @@ const EXPORT_PATHS = [
   "favicon.ico",
   "apple-touch-icon.png",
   "llms.txt",
+  "googled4758723af35bbb5.html",
 ];
 
 const present = EXPORT_PATHS.filter((p) => existsSync(join(ROOT, p)));

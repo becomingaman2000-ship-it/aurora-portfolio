@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { assetUrl } from "../lib/asset";
-import { SITE_URL, personJsonLd, websiteJsonLd } from "../lib/site";
+import { SITE_URL, GOOGLE_SITE_VERIFICATION, personJsonLd, websiteJsonLd } from "../lib/site";
 import { AuroraBackground } from "../components/AuroraBackground";
 import { ScrollStroke, type StrokeVariant } from "../components/ScrollStroke";
 import { ScrollDissolve } from "../components/ScrollDissolve";
@@ -68,6 +68,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "robots",
         content: "index, follow, max-image-preview:large, max-snippet:-1",
       },
+      // Google Search Console verification (HTML tag method) — on every route.
+      { name: "google-site-verification", content: GOOGLE_SITE_VERIFICATION },
       { title: "Eustace Madawu — Freelance Software & Website Engineer" },
       {
         name: "description",

@@ -10,6 +10,15 @@ export const SITE_NAME = "Eustace Madawu — Software & Website Engineer";
 export const PERSON_ID = `${SITE_URL}/#person`;
 
 /**
+ * Google Search Console ownership verification (HTML tag method).
+ * Emitted as <meta name="google-site-verification"> in every page's <head>
+ * via the root route. The matching verification file
+ * (googled4758723af35bbb5.html) is also served from the site root via
+ * /public. Keep both in place — Google re-checks periodically.
+ */
+export const GOOGLE_SITE_VERIFICATION = "googled4758723af35bbb5.html";
+
+/**
  * Absolute URL for metadata (canonical, og:image, …). Accepts /-paths.
  * NOTE: SITE_URL already contains the deployment subpath (e.g. /<repo>/), so
  * this must NOT add the vite base on top — just join plainly.

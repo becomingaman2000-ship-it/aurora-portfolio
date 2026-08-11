@@ -72,11 +72,11 @@ function Home() {
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             Available for engagements
           </motion.span>
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-semibold leading-[0.95]">
+          <h1 className="font-display text-[2.75rem] sm:text-6xl md:text-7xl font-semibold leading-[0.95]">
             Building the web,
             <br />
             <LoopText
-              className="text-5xl sm:text-6xl md:text-7xl font-semibold"
+              className="text-[2.75rem] sm:text-6xl md:text-7xl font-semibold"
               words={[
                 "one system at a time.",
                 "one interface at a time.",
@@ -121,13 +121,13 @@ function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 pt-8 max-w-md">
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-8 max-w-md">
             {[
               { k: "4+", v: "Leadership roles" },
               { k: "3", v: "Languages" },
               { k: "∞", v: "Products shipped" },
             ].map((s) => (
-              <div key={s.v} className="glass rounded-2xl px-4 py-3">
+              <div key={s.v} className="glass rounded-2xl px-3 py-3 sm:px-4">
                 <div className="text-2xl font-semibold text-gradient">{s.k}</div>
                 <div className="text-[11px] uppercase tracking-wider text-muted-foreground">
                   {s.v}

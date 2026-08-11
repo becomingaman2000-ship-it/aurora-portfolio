@@ -17,7 +17,32 @@ export function HoverExpand({
       transition={{ duration: 0.4, delay: 0.15 }}
       className={`relative w-full ${className ?? ""}`}
     >
-      <div className="flex w-full items-center justify-center gap-1.5">
+      {/* Mobile: touch-friendly snap carousel (scrolls inside its own row) */}
+      <div className="md:hidden -mx-6 overflow-x-auto snap-x snap-mandatory no-scrollbar px-6 pb-1">
+        <div className="flex w-max gap-3">
+          {images.map((image, index) => (
+            <figure
+              key={index}
+              className="relative shrink-0 snap-center overflow-hidden rounded-2xl border border-glass-border"
+            >
+              <img
+                src={image.src}
+                className="h-60 w-auto max-w-none"
+                alt={image.alt}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-3 pt-8">
+                <p className="text-[10px] uppercase tracking-widest text-white/70">{image.code}</p>
+                <p className="text-xs text-white/90">{image.alt}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop: hover-expanding filmstrip */}
+      <div className="hidden md:flex w-full items-center justify-center gap-1.5">
         {images.map((image, index) => (
           <motion.button
             key={index}
@@ -61,6 +86,7 @@ export function HoverExpand({
               className="h-full w-full object-cover"
               alt={image.alt}
               loading="lazy"
+              decoding="async"
             />
           </motion.button>
         ))}

@@ -121,6 +121,7 @@ function Services() {
             src={assetUrl(img.url)}
             alt="Eustace working"
             className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
+            decoding="async"
           />
         </motion.div>
       </section>

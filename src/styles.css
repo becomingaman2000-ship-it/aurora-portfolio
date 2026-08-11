@@ -148,6 +148,8 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    /* Never allow horizontal page scroll on any screen size */
+    overflow-x: clip;
   }
   h1,
   h2,
@@ -174,6 +176,14 @@
   box-shadow:
     0 20px 60px -20px oklch(0.3 0.15 260 / 0.4),
     inset 0 1px 0 0 oklch(1 0 0 / 0.5);
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @utility text-gradient {

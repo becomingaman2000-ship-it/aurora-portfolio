@@ -74,6 +74,7 @@ function About() {
               src={assetUrl(img.url)}
               alt="Eustace Madawu"
               className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
+              decoding="async"
             />
           </motion.div>
           <div className="space-y-5">
@@ -135,11 +136,11 @@ function About() {
                 {items.map(([name, level]) => (
                   <li
                     key={name}
-                    className="flex items-center justify-between text-sm border-b border-border/40 pb-2 last:border-0"
+                    className="flex items-center justify-between gap-3 text-sm border-b border-border/40 pb-2 last:border-0"
                   >
-                    <span>{name}</span>
+                    <span className="min-w-0">{name}</span>
                     <span
-                      className={`text-[10px] uppercase tracking-wider rounded-full px-2 py-0.5 ${
+                      className={`shrink-0 text-[10px] uppercase tracking-wider rounded-full px-2 py-0.5 ${
                         level === "Advanced"
                           ? "bg-primary/15 text-primary"
                           : "bg-accent/15 text-accent"
@@ -205,6 +206,8 @@ function About() {
             src={assetUrl(img2.url)}
             alt="Eustace at work"
             className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </motion.div>
       </section>

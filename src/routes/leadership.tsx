@@ -75,6 +75,7 @@ function Leadership() {
             src={assetUrl(img.url)}
             alt="Eustace in leadership setting"
             className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
+            decoding="async"
           />
         </motion.div>
         <div className="space-y-5">

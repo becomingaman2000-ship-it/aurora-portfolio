@@ -15,7 +15,7 @@ export function ExpandingPill({
       <motion.div
         layout
         initial={false}
-        animate={{ width: open ? 320 : 56 }}
+        animate={{ width: open ? "min(20rem, 78vw)" : "3.5rem" }}
         transition={{ type: "spring", bounce: 0.18, duration: 0.5 }}
         className="glass-strong flex h-14 items-center overflow-hidden rounded-full"
       >

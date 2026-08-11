@@ -55,6 +55,7 @@ function Projects() {
             src={assetUrl(img.url)}
             alt="Eustace presenting"
             className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
+            decoding="async"
           />
         </motion.div>
       </section>
@@ -94,7 +95,13 @@ function Projects() {
               whileHover={{ scale: 1.01, y: -4 }}
               className="overflow-hidden rounded-2xl border border-glass-border"
             >
-              <img src={assetUrl(m.url)} alt={`Makeke screen ${i + 1}`} className="w-full" />
+              <img
+                src={assetUrl(m.url)}
+                alt={`Makeke screen ${i + 1}`}
+                className="w-full"
+                loading="lazy"
+                decoding="async"
+              />
             </motion.div>
           ))}
         </div>

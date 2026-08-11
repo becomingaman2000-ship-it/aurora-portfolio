@@ -11,7 +11,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { AuroraBackground } from "../components/AuroraBackground";
 import { ScrollStroke, type StrokeVariant } from "../components/ScrollStroke";
 import { ScrollDissolve } from "../components/ScrollDissolve";
@@ -22,9 +21,7 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="glass-strong max-w-md rounded-3xl p-10 text-center">
         <h1 className="text-6xl font-bold text-gradient">404</h1>
-        <p className="mt-3 text-sm text-muted-foreground">
-          This page drifted into the aurora.
-        </p>
+        <p className="mt-3 text-sm text-muted-foreground">This page drifted into the aurora.</p>
         <Link
           to="/"
           className="mt-6 inline-flex rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground hover:opacity-90"
@@ -39,7 +36,7 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    console.error("[root error boundary]", error);
   }, [error]);
   return (
     <div className="flex min-h-screen items-center justify-center px-4">

@@ -49,11 +49,7 @@ const services = [
     tag: "Product",
     title: "Product Design & Strategy",
     desc: "From a napkin idea to a spec, a working prototype, and a shipped v1 — with tight revision cycles.",
-    bullets: [
-      "Discovery & requirements",
-      "UI/UX prototyping",
-      "Ship-and-iterate delivery",
-    ],
+    bullets: ["Discovery & requirements", "UI/UX prototyping", "Ship-and-iterate delivery"],
   },
   {
     id: "data",
@@ -67,22 +63,14 @@ const services = [
     tag: "People",
     title: "Counselling & Peer Support",
     desc: "Trained counsellor delivering confidential, empathetic support and leading peer-counselling programmes.",
-    bullets: [
-      "1:1 counselling sessions",
-      "Programme oversight",
-      "Confidentiality-first",
-    ],
+    bullets: ["1:1 counselling sessions", "Programme oversight", "Confidentiality-first"],
   },
   {
     id: "events",
     tag: "Events",
     title: "Event Planning & Organising",
     desc: "Large-scale events, university sports fixtures, and orientation programmes — smoothly delivered.",
-    bullets: [
-      "Logistics & scheduling",
-      "Registration & equipment",
-      "On-the-day coordination",
-    ],
+    bullets: ["Logistics & scheduling", "Registration & equipment", "On-the-day coordination"],
   },
 ];
 
@@ -98,8 +86,8 @@ function Services() {
             What I can do for <span className="text-gradient">your team.</span>
           </h1>
           <p className="text-muted-foreground text-base md:text-lg max-w-xl">
-            I mainly offer website and software engineering — with product design,
-            counselling and events on the side. Everything is built to ship.
+            I mainly offer website and software engineering — with product design, counselling and
+            events on the side. Everything is built to ship.
           </p>
           <Link
             to="/contact"

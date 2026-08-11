@@ -43,8 +43,8 @@ function Contact() {
           Let's <span className="text-gradient">build something.</span>
         </h1>
         <p className="text-muted-foreground text-base md:text-lg max-w-md">
-          Available for freelance engineering engagements, product builds,
-          industrial attachment, and founder partnerships.
+          Available for freelance engineering engagements, product builds, industrial attachment,
+          and founder partnerships.
         </p>
 
         <div className="space-y-3">
@@ -56,15 +56,11 @@ function Contact() {
             <div className="text-sm mt-1">{CONTACT_EMAIL}</div>
           </a>
           <div className="glass block rounded-2xl p-4">
-            <div className="text-[10px] uppercase tracking-widest text-primary">
-              Based in
-            </div>
+            <div className="text-[10px] uppercase tracking-widest text-primary">Based in</div>
             <div className="text-sm mt-1">Harare, Zimbabwe</div>
           </div>
           <div className="glass block rounded-2xl p-4">
-            <div className="text-[10px] uppercase tracking-widest text-primary">
-              Affiliation
-            </div>
+            <div className="text-[10px] uppercase tracking-widest text-primary">Affiliation</div>
             <div className="text-sm mt-1">
               Harare Institute of Technology — B.Tech (Hons) Electronic Commerce
             </div>
@@ -72,8 +68,7 @@ function Contact() {
         </div>
 
         <blockquote className="glass rounded-2xl p-5 text-sm italic text-muted-foreground border-l-2 border-primary">
-          "Bringing world-class engineering discipline and proven leadership to every
-          project."
+          "Bringing world-class engineering discipline and proven leadership to every project."
         </blockquote>
       </div>
 

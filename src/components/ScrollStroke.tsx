@@ -40,7 +40,11 @@ const STRUCTURES: Record<StrokeVariant, Shape[]> = {
     { d: "M500 240 L760 500 L500 760 L240 500 Z", w: 5, o: 0.5 },
     { d: "M330 330 H670 V670 H330 Z", w: 4, dash: true },
     { d: "M500 380 L620 500 L500 620 L380 500 Z", w: 4, o: 0.5 },
-    { d: "M180 180 L500 380 M820 820 L500 620 M820 180 L620 500 M180 820 L380 500", w: 2.5, o: 0.35 },
+    {
+      d: "M180 180 L500 380 M820 820 L500 620 M820 180 L620 500 M180 820 L380 500",
+      w: 2.5,
+      o: 0.35,
+    },
   ],
   // Interference waves with vertical scaffolding
   wave: [
@@ -180,4 +184,3 @@ export function ScrollStroke({
     </section>
   );
 }
-

@@ -81,9 +81,9 @@ function Leadership() {
             Trusted with <span className="text-gradient">people & programmes.</span>
           </h1>
           <p className="text-muted-foreground text-base md:text-lg max-w-xl">
-            A rare combination of technical depth and people leadership — certified
-            counsellor, programme overseer, and event organiser with a track record of
-            institutional responsibility.
+            A rare combination of technical depth and people leadership — certified counsellor,
+            programme overseer, and event organiser with a track record of institutional
+            responsibility.
           </p>
         </div>
       </section>
@@ -98,9 +98,7 @@ function Leadership() {
             transition={{ delay: i * 0.05 }}
             className="glass rounded-3xl p-6 space-y-3"
           >
-            <div className="text-xs uppercase tracking-widest text-primary">
-              0{i + 1} · Role
-            </div>
+            <div className="text-xs uppercase tracking-widest text-primary">0{i + 1} · Role</div>
             <h3 className="text-xl font-semibold">{r.title}</h3>
             <div className="text-sm text-muted-foreground italic">{r.org}</div>
             <ul className="space-y-2 text-sm pt-2">
@@ -116,9 +114,7 @@ function Leadership() {
       </section>
 
       <section className="glass-strong rounded-[2rem] p-8 md:p-12 text-center">
-        <div className="text-xs uppercase tracking-widest text-primary">
-          Personal attributes
-        </div>
+        <div className="text-xs uppercase tracking-widest text-primary">Personal attributes</div>
         <div className="mt-4 flex flex-wrap gap-2 justify-center">
           {[
             "Highly Dependable",

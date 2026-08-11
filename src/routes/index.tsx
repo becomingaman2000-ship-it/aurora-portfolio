@@ -43,9 +43,9 @@ function Home() {
             />
           </h1>
           <p className="max-w-xl text-base md:text-lg text-muted-foreground">
-            I'm <b className="text-foreground">Eustace Madawu</b> — a software & website
-            engineer, technopreneur, trained counsellor and event organiser from Harare,
-            Zimbabwe. I design and ship full-stack products end-to-end.
+            I'm <b className="text-foreground">Eustace Madawu</b> — a software & website engineer,
+            technopreneur, trained counsellor and event organiser from Harare, Zimbabwe. I design
+            and ship full-stack products end-to-end.
           </p>
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <Link
@@ -66,14 +66,12 @@ function Home() {
                   {
                     icon: "✉",
                     label: "Email",
-                    onClick: () =>
-                      (window.location.href = `mailto:${CONTACT_EMAIL}`),
+                    onClick: () => (window.location.href = `mailto:${CONTACT_EMAIL}`),
                   },
                   {
                     icon: "▶",
                     label: "Gmail",
-                    onClick: () =>
-                      window.open(GMAIL_COMPOSE, "_blank", "noopener,noreferrer"),
+                    onClick: () => window.open(GMAIL_COMPOSE, "_blank", "noopener,noreferrer"),
                   },
                 ]}
               />
@@ -121,16 +119,12 @@ function Home() {
                   <div className="font-semibold">Eustace Madawu</div>
                   <div className="text-muted-foreground">Harare, Zimbabwe</div>
                 </div>
-                <span className="rounded-full bg-primary/20 px-2 py-1 text-primary">
-                  Tier SSS
-                </span>
+                <span className="rounded-full bg-primary/20 px-2 py-1 text-primary">Tier SSS</span>
               </div>
             </div>
           </div>
         </motion.div>
       </section>
-
-
 
       <section className="mt-24 grid gap-4 md:grid-cols-3">
         {[
@@ -155,9 +149,7 @@ function Home() {
             to={c.to}
             className="glass group rounded-3xl p-6 transition hover:-translate-y-1 hover:shadow-2xl"
           >
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">
-              Explore
-            </div>
+            <div className="text-xs uppercase tracking-widest text-muted-foreground">Explore</div>
             <div className="mt-2 text-2xl font-semibold">{c.t}</div>
             <p className="mt-2 text-sm text-muted-foreground">{c.d}</p>
             <div className="mt-4 text-sm text-primary group-hover:translate-x-1 transition">

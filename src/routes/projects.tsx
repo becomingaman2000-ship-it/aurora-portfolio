@@ -38,8 +38,8 @@ function Projects() {
             Products <span className="text-gradient">shipped & live.</span>
           </h1>
           <p className="text-muted-foreground max-w-xl">
-            Full-stack builds — designed, engineered, and delivered end-to-end.
-            Click through, watch the pitch, or try it live.
+            Full-stack builds — designed, engineered, and delivered end-to-end. Click through, watch
+            the pitch, or try it live.
           </p>
         </div>
         <motion.div
@@ -64,27 +64,21 @@ function Projects() {
       >
         <div className="flex items-start justify-between gap-6 flex-wrap">
           <div>
-            <div className="text-xs uppercase tracking-widest text-primary">
-              01 · Flagship
-            </div>
+            <div className="text-xs uppercase tracking-widest text-primary">01 · Flagship</div>
             <h2 className="mt-2 text-4xl md:text-5xl font-semibold">Makeke</h2>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              A B2B platform that connects bakeries and pastry producers with the
-              retailers, cafés and event vendors that need them — on-demand supply,
-              routed and fulfilled. Think logistics + marketplace for the cakes and
-              pastries economy, built for African cities.
+              A B2B platform that connects bakeries and pastry producers with the retailers, cafés
+              and event vendors that need them — on-demand supply, routed and fulfilled. Think
+              logistics + marketplace for the cakes and pastries economy, built for African cities.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 text-xs">
-              {[
-                "B2B marketplace",
-                "Realtime dispatch",
-                "Vendor & retailer roles",
-                "Payments",
-              ].map((t) => (
-                <span key={t} className="glass rounded-full px-3 py-1">
-                  {t}
-                </span>
-              ))}
+              {["B2B marketplace", "Realtime dispatch", "Vendor & retailer roles", "Payments"].map(
+                (t) => (
+                  <span key={t} className="glass rounded-full px-3 py-1">
+                    {t}
+                  </span>
+                ),
+              )}
             </div>
           </div>
         </div>
@@ -127,16 +121,12 @@ function Projects() {
       >
         <div className="flex items-start justify-between gap-6 flex-wrap">
           <div>
-            <div className="text-xs uppercase tracking-widest text-accent">
-              02 · Live
-            </div>
-            <h2 className="mt-2 text-4xl md:text-5xl font-semibold">
-              Hit Campus Guide
-            </h2>
+            <div className="text-xs uppercase tracking-widest text-accent">02 · Live</div>
+            <h2 className="mt-2 text-4xl md:text-5xl font-semibold">Hit Campus Guide</h2>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              An interactive way-finder for the Harare Institute of Technology
-              campus — helping new students, visitors, and staff navigate lecture
-              halls, offices, and facilities with ease.
+              An interactive way-finder for the Harare Institute of Technology campus — helping new
+              students, visitors, and staff navigate lecture halls, offices, and facilities with
+              ease.
             </p>
           </div>
           <a

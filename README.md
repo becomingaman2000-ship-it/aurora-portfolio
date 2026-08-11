@@ -1,24 +1,89 @@
-# Aurora Portfolio
+# Portfolio — Eustace Madawu
 
-create a professional profile portfolio using those details, website should use those pictures and use the images of me on each page depicting what i also do. the website should me a minimalistic glassmorphic spatial ui design which uses all the components in the Txt document and has live and working animations everything should be clickable and should take you somewhere i mainly offer website and software engineering services amoung other various things color paleate use a veary light white peach like the beach as the main color, turquise sea blue gradienting to purple, silver-blue, navy blue and charcoal black. make sure we have a light and dark mode. Dont mention project X or the virtual labs under the founder section they should not appear at all. use animated auroras as the background which complement and go with my main color palets for each dark and light mode. The 1st picture is of me and the zipped folder named starting with Eustace and the rest in the zipped folder projects are the projects ive done makeke pictures saved as Makeke and also a video of makeke innovator pitch aswell. where makeke is a business to business platform similar to Uber/Indrive but for cakes and pastries(pitch it differently though), then Hit Campus Guide which are named nav its link is: https://becomingaman2000-ship-it.github.io/hitarnav/
+Personal portfolio website of **Eustace Madawu** — software & website engineer,
+technopreneur, trained counsellor and event organiser from Harare, Zimbabwe.
 
-This project was built with [Lovable](https://lovable.dev).
+Minimalist glassmorphic spatial UI with animated aurora backgrounds, light/dark
+mode, and full server-side rendering.
 
-## Build with Lovable
+## Stack
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/451fea96-8839-43f0-baec-d2d49b0dd462).
+- **[TanStack Start](https://tanstack.com/start)** + React 19 (SSR, file-based routes in `src/routes/`)
+- **[Tailwind CSS v4](https://tailwindcss.com)** + shadcn-style UI components
+- **[Framer Motion](https://motion.dev)** animations
+- **[Nitro](https://nitro.build)** server output — deployable anywhere
+- Vite 8 · TypeScript · Node ≥ 20.19
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Quick start
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+npm install
+npm run dev        # dev server on http://localhost:8080
 ```
+
+## Production build
+
+```sh
+npm run build      # outputs a self-contained server to .output/
+npm start          # serves the production build (PORT/HOST env respected)
+```
+
+The `.output/` folder is fully self-contained — copy it to any Node 20.19+
+host and run `node .output/server/index.mjs`.
+
+## Deploy
+
+The deployment target is chosen **at build time** via `NITRO_PRESET`:
+
+| Target                  | Build command                                  | Then                                |
+| ----------------------- | ---------------------------------------------- | ----------------------------------- |
+| Any Node host (default) | `npm run build`                                | `node .output/server/index.mjs`     |
+| Docker                  | `docker build -t portfolio .`                  | `docker run -p 3000:3000 portfolio` |
+| Vercel                  | `NITRO_PRESET=vercel npm run build`            | deploy `.output/` / zero-config     |
+| Netlify                 | `NITRO_PRESET=netlify npm run build`           | deploy via Netlify CLI/UI           |
+| Cloudflare Workers      | `NITRO_PRESET=cloudflare-module npm run build` | `npx wrangler deploy`               |
+
+Full preset list: <https://nitro.build/deploy#presets>
+
+## Media assets
+
+All media is served locally from `public/assets/` — no external CDN
+dependency. The repository ships **abstract placeholder images** so the site
+renders out of the box. Replace them with the real files **using these exact
+filenames** (see `src/assets/*.asset.json`, which maps each name to a public
+path):
+
+| File                                           | Used on                          |
+| ---------------------------------------------- | -------------------------------- |
+| `public/assets/profile-main.jpg`               | Home hero portrait (≈4:5)        |
+| `public/assets/eustace-2.jpg`, `eustace-3.jpg` | About                            |
+| `public/assets/eustace-4.jpg`                  | Services                         |
+| `public/assets/eustace-5.jpg`                  | Contact / Projects               |
+| `public/assets/eustace-6.jpg`                  | Leadership                       |
+| `public/assets/makeke-1.jpg`, `makeke-2.jpg`   | Projects — Makeke screenshots    |
+| `public/assets/makeke-pitch.mp4`               | Projects — innovator pitch video |
+| `public/assets/nav-1.jpg` … `nav-3.jpg`        | Projects — Hit Campus Guide      |
+
+Just drop your originals over the placeholders and rebuild (or restart the dev
+server). No code changes needed.
+
+## Project structure
+
+```
+public/assets/     # static media (images/video above)
+src/assets/        # *.asset.json manifests -> public paths
+src/components/    # aurora background, nav, motion primitives, ui/
+src/lib/           # contact links, SSR error page/capture
+src/routes/        # /, /about, /services, /projects, /leadership, /contact, /sitemap.xml
+src/server.ts      # SSR error-wrapping server entry
+```
+
+## Scripts
+
+| Command          | What it does                     |
+| ---------------- | -------------------------------- |
+| `npm run dev`    | Dev server with HMR on port 8080 |
+| `npm run build`  | Production build → `.output/`    |
+| `npm start`      | Run the production server        |
+| `npm run lint`   | ESLint                           |
+| `npm run format` | Prettier                         |

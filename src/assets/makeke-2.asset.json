@@ -1,11 +1,8 @@
 {
   "version": 1,
-  "asset_id": "4b8cbb58-5b19-402e-b74a-151f9e1699b3",
-  "project_id": "451fea96-8839-43f0-baec-d2d49b0dd462",
-  "url": "/__l5e/assets-v1/4b8cbb58-5b19-402e-b74a-151f9e1699b3/makeke-2.png",
-  "r2_key": "a/v1/451fea96-8839-43f0-baec-d2d49b0dd462/4b8cbb58-5b19-402e-b74a-151f9e1699b3/makeke-2.png",
-  "original_filename": "makeke-2.png",
+  "url": "/assets/makeke-2.jpg",
+  "original_filename": "makeke-2.jpg",
   "size": 205643,
-  "content_type": "image/png",
+  "content_type": "image/jpeg",
   "created_at": "2026-07-01T12:25:56Z"
 }

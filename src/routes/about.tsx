@@ -80,30 +80,23 @@ function About() {
               Engineer, builder, <span className="text-gradient">leader.</span>
             </h1>
             <p className="text-muted-foreground text-base md:text-lg">
-              Eustace Madawu is a Zimbabwean software and website engineer completing a
-              Bachelor of Technology Honours Degree in Electronic Commerce at the
-              Harare Institute of Technology (HIT), School of Business Management
-              Sciences. He operates at the intersection of full-stack engineering,
-              digital business strategy, and product design.
+              Eustace Madawu is a Zimbabwean software and website engineer completing a Bachelor of
+              Technology Honours Degree in Electronic Commerce at the Harare Institute of Technology
+              (HIT), School of Business Management Sciences. He operates at the intersection of
+              full-stack engineering, digital business strategy, and product design.
             </p>
             <p className="text-muted-foreground text-base md:text-lg">
-              Beyond engineering, Eustace brings a rare combination of technical depth
-              and people leadership — a trained counsellor, Overseer of Peer
-              Counselling & Psychological Services at HIT, former Head Boy of Red Cross
-              Independent College, and a trusted event organiser. Advanced technical
-              craft, paired with proven leadership.
+              Beyond engineering, Eustace brings a rare combination of technical depth and people
+              leadership — a trained counsellor, Overseer of Peer Counselling & Psychological
+              Services at HIT, former Head Boy of Red Cross Independent College, and a trusted event
+              organiser. Advanced technical craft, paired with proven leadership.
             </p>
             <div className="flex flex-wrap gap-2 pt-2">
-              {["Full-stack", "Product design", "Systems & Data", "Leadership"].map(
-                (t) => (
-                  <span
-                    key={t}
-                    className="glass rounded-full px-3 py-1 text-xs"
-                  >
-                    {t}
-                  </span>
-                ),
-              )}
+              {["Full-stack", "Product design", "Systems & Data", "Leadership"].map((t) => (
+                <span key={t} className="glass rounded-full px-3 py-1 text-xs">
+                  {t}
+                </span>
+              ))}
             </div>
           </div>
         </section>
@@ -133,9 +126,7 @@ function About() {
               viewport={{ once: true, margin: "-60px" }}
               className="glass rounded-3xl p-6"
             >
-              <div className="text-xs uppercase tracking-widest text-primary">
-                {group}
-              </div>
+              <div className="text-xs uppercase tracking-widest text-primary">{group}</div>
               <ul className="mt-4 space-y-2">
                 {items.map(([name, level]) => (
                   <li
@@ -165,9 +156,7 @@ function About() {
           <span className="glass inline-flex rounded-full px-3 py-1 text-xs uppercase tracking-widest">
             Languages · Education
           </span>
-          <h2 className="text-3xl md:text-4xl font-semibold">
-            Fluent across worlds
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-semibold">Fluent across worlds</h2>
           <div className="grid grid-cols-3 gap-3 max-w-md">
             {[
               ["English", "Fluent"],
@@ -183,20 +172,18 @@ function About() {
             ))}
           </div>
           <div className="glass rounded-3xl p-6 space-y-3">
-            <div className="text-xs uppercase tracking-widest text-primary">
-              Education
-            </div>
+            <div className="text-xs uppercase tracking-widest text-primary">Education</div>
             <ul className="space-y-2 text-sm">
               <li>
-                <b>Harare Institute of Technology</b> — B.Tech (Hons) in Electronic
-                Commerce · 2024–Present
+                <b>Harare Institute of Technology</b> — B.Tech (Hons) in Electronic Commerce ·
+                2024–Present
               </li>
               <li>
                 <b>HIT</b> — Certificate in Higher & Tertiary Education (E-Commerce)
               </li>
               <li>
-                <b>Red Cross Independent College</b> — A-Level: Economics, Business
-                Studies, Computer Science · 2023
+                <b>Red Cross Independent College</b> — A-Level: Economics, Business Studies,
+                Computer Science · 2023
               </li>
               <li>
                 <b>St John's High School, Chikwaka</b> — O-Level · 2021

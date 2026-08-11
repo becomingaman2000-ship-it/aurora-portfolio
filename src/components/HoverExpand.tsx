@@ -51,9 +51,7 @@ export function HoverExpand({
                   transition={{ delay: 0.1 }}
                   className="absolute inset-0 flex flex-col items-start justify-end p-5 text-left"
                 >
-                  <p className="text-xs uppercase tracking-widest text-white/70">
-                    {image.code}
-                  </p>
+                  <p className="text-xs uppercase tracking-widest text-white/70">{image.code}</p>
                   <p className="text-sm text-white/90">{image.alt}</p>
                 </motion.div>
               )}

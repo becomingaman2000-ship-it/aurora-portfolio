@@ -45,17 +45,16 @@ export function ScrollDissolve({ children }: { children: ReactNode }) {
         const center = r.top + r.height / 2;
         // 1 inside the reading band, ramping to 0 past the edges
         const topFade = Math.min(1, Math.max(0, (center + r.height * 0.35) / (vh * 0.42)));
-        const bottomFade = Math.min(
-          1,
-          Math.max(0, (vh * 1.05 - center) / (vh * 0.35)),
-        );
+        const bottomFade = Math.min(1, Math.max(0, (vh * 1.05 - center) / (vh * 0.35)));
         const v = Math.min(topFade, bottomFade);
         if (Math.abs(v - item.last) < 0.02) continue;
         item.last = v;
         item.el.style.opacity = String(0.05 + 0.95 * v);
         item.el.style.filter = v > 0.99 ? "none" : `blur(${((1 - v) * 8).toFixed(2)}px)`;
         item.el.style.transform =
-          v > 0.99 ? "none" : `translate3d(0, ${((1 - v) * 18).toFixed(2)}px, 0) scale(${(0.97 + 0.03 * v).toFixed(3)})`;
+          v > 0.99
+            ? "none"
+            : `translate3d(0, ${((1 - v) * 18).toFixed(2)}px, 0) scale(${(0.97 + 0.03 * v).toFixed(3)})`;
       }
     };
 

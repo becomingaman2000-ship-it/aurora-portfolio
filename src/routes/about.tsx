@@ -67,7 +67,7 @@ function About() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="glass-strong rounded-[2rem] p-2"
           >
             <img
@@ -128,7 +128,7 @@ function About() {
               key={group}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
+              viewport={{ once: false, margin: "-60px" }}
               className="glass rounded-3xl p-6"
             >
               <div className="text-xs uppercase tracking-widest text-primary">{group}</div>
@@ -199,7 +199,7 @@ function About() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="glass-strong rounded-[2rem] p-2"
         >
           <img

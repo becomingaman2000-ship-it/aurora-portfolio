@@ -132,7 +132,7 @@ function Services() {
             key={s.id}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: false, margin: "-40px" }}
             transition={{ delay: i * 0.04 }}
             className="glass group rounded-3xl p-6 flex flex-col hover:-translate-y-1 transition"
           >

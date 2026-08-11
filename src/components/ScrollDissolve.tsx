@@ -1,18 +1,35 @@
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+
+/** Dissolve only on tablet/desktop widths — see below. */
+const ENABLE_QUERY = "(min-width: 768px)";
 
 /**
  * Dissolves blocks as they leave the reading band — content above (already
  * read) and below fades + blurs away, and re-materialises when scrolled back.
  * Uses one passive rAF-throttled scroll listener and writes only
  * opacity/filter/transform, so it stays smooth on long pages.
+ *
+ * PHONES: the effect is disabled entirely below 768px. Small viewports leave
+ * whole sections sitting inside the fade band, so copy got stuck semi-blurred
+ * and unreadable. Phone users get the normal reveal transitions instead.
  */
 export function ScrollDissolve({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
+    const mq = window.matchMedia(ENABLE_QUERY);
+    const apply = () => setEnabled(mq.matches);
+    apply(); // also covers first client render
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const root = ref.current;
     if (!root) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let frame = 0;
     let ready = false;
@@ -99,7 +116,7 @@ export function ScrollDissolve({ children }: { children: ReactNode }) {
         item.el.style.willChange = "";
       }
     };
-  }, []);
+  }, [enabled]);
 
   return <div ref={ref}>{children}</div>;
 }

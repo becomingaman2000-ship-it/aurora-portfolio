@@ -99,7 +99,7 @@ function Leadership() {
             key={r.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: false, margin: "-40px" }}
             transition={{ delay: i * 0.05 }}
             className="glass rounded-3xl p-6 space-y-3"
           >

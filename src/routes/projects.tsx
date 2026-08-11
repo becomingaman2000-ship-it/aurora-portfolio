@@ -64,7 +64,7 @@ function Projects() {
       <motion.section
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: false, margin: "-80px" }}
         className="glass-strong rounded-[2rem] p-6 md:p-10 space-y-8"
       >
         <div className="flex items-start justify-between gap-6 flex-wrap">
@@ -127,7 +127,7 @@ function Projects() {
       <motion.section
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: false, margin: "-80px" }}
         className="glass-strong rounded-[2rem] p-6 md:p-10 space-y-8"
       >
         <div className="flex items-start justify-between gap-6 flex-wrap">

@@ -95,13 +95,8 @@ function Home() {
           </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.9, ease: [0.32, 0.72, 0, 1] }}
-          className="relative"
-        >
-          <div className="animate-float-slow relative mx-auto aspect-[4/5] w-full max-w-md">
+        <div className="relative">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
             <div
               className="absolute inset-0 rounded-[2.5rem] blur-2xl opacity-70"
               style={{
@@ -124,7 +119,7 @@ function Home() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       <section className="mt-24 grid gap-4 md:grid-cols-3">

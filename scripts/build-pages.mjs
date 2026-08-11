@@ -46,6 +46,7 @@ const MANAGED = [
   "sitemap.xml",
   "robots.txt",
   "favicon.ico",
+  "apple-touch-icon.png",
 ];
 
 function run(cmd, args, env = {}) {

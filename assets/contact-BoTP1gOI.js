@@ -1,0 +1,1 @@
+var e=`foreigncartelthe7nth@gmail.com`;function t(t=``,n=``){return`https://mail.google.com/mail/?${new URLSearchParams({view:`cm`,fs:`1`,to:e,su:t,body:n}).toString()}`}var n=t(`Enquiry from your website`);export{n,t as r,e as t};

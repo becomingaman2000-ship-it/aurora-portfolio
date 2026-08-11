@@ -31,6 +31,7 @@ const EXPORT_PATHS = [
   "sitemap.xml",
   "robots.txt",
   "favicon.ico",
+  "apple-touch-icon.png",
 ];
 
 const present = EXPORT_PATHS.filter((p) => existsSync(join(ROOT, p)));

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import img from "@/assets/eustace-6.asset.json";
+import { assetUrl } from "@/lib/asset";
 
 export const Route = createFileRoute("/leadership")({
   head: () => ({
@@ -12,8 +13,8 @@ export const Route = createFileRoute("/leadership")({
           "Trusted with people, programmes, and institutional responsibility — counselling, head-boy leadership, and event organising.",
       },
       { property: "og:title", content: "Leadership — Eustace Madawu" },
-      { property: "og:image", content: img.url },
-      { name: "twitter:image", content: img.url },
+      { property: "og:image", content: assetUrl(img.url) },
+      { name: "twitter:image", content: assetUrl(img.url) },
     ],
   }),
   component: Leadership,
@@ -68,7 +69,7 @@ function Leadership() {
           className="glass-strong rounded-[2rem] p-2"
         >
           <img
-            src={img.url}
+            src={assetUrl(img.url)}
             alt="Eustace in leadership setting"
             className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
           />

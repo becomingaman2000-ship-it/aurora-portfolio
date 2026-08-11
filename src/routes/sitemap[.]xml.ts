@@ -5,9 +5,9 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async ({ request }: { request: Request }) => {
-        // Derive the origin from the incoming request so the sitemap is
-        // correct on whatever domain the site is deployed to.
-        const base = new URL(request.url).origin;
+        // SITE_URL wins when set (it is baked in at build time for static
+        // prerendered deploys); otherwise derive the origin per request.
+        const base = process.env.SITE_URL || new URL(request.url).origin;
         const paths = ["/", "/about", "/services", "/projects", "/leadership", "/contact"];
         const urls = paths
           .map((p) => `  <url><loc>${base}${p}</loc><changefreq>weekly</changefreq></url>`)

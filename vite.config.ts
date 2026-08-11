@@ -23,6 +23,10 @@ import tsConfigPaths from "vite-tsconfig-paths";
 import { nitro } from "nitro/vite";
 
 const nitroPreset = process.env.NITRO_PRESET || "node-server";
+// Deploy base path — "/" normally, "/<repo>/" for GitHub Pages project sites.
+const basePath = process.env.VITE_BASE_PATH || "/";
+// Static prerender (for GitHub Pages et al.) when PRERENDER=true.
+const shouldPrerender = process.env.PRERENDER === "true";
 
 export default defineConfig(({ command, mode }) => {
   // Expose VITE_* env vars to server-side bundles as well (Vite only injects
@@ -34,6 +38,7 @@ export default defineConfig(({ command, mode }) => {
   }
 
   return {
+    base: basePath,
     define: envDefine,
     resolve: {
       alias: { "@": `${process.cwd()}/src` },
@@ -66,12 +71,31 @@ export default defineConfig(({ command, mode }) => {
           behavior: "error",
           client: { files: ["**/server/**"], specifiers: ["server-only"] },
         },
+        // Pin the router basepath (leading slash!) so SSR route matching works
+        // on subpath deployments like GitHub Pages project sites. Without this
+        // the plugin derives a slash-less value from vite.base and every URL
+        // SSRs as the home page.
+        router: { basepath: basePath === "/" ? "/" : basePath.replace(/\/$/, "") },
         // Redirect TanStack Start's server entry to src/server.ts (SSR error wrapper).
         server: { entry: "server" },
       }),
       viteReact(),
       // Build-only: produce the deployable server in .output/ (NITRO_PRESET).
-      command === "build" ? nitro({ preset: nitroPreset }) : null,
+      // With PRERENDER=true, additionally crawl the site and emit static HTML
+      // into .output/public/ (used by the GitHub Pages deploy script).
+      command === "build"
+        ? nitro({
+            preset: nitroPreset,
+            ...(shouldPrerender
+              ? {
+                  prerender: {
+                    crawlLinks: true,
+                    routes: ["/", "/sitemap.xml"],
+                  },
+                }
+              : {}),
+          })
+        : null,
     ].filter(Boolean),
   };
 });

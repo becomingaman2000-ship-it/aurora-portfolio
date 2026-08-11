@@ -45,6 +45,27 @@ The deployment target is chosen **at build time** via `NITRO_PRESET`:
 
 Full preset list: <https://nitro.build/deploy#presets>
 
+### GitHub Pages (currently live)
+
+The repo is configured to serve GitHub Pages **from the production branch,
+path `/`**, so the static site lives at
+`https://becomingaman2000-ship-it.github.io/aurora-portfolio/`.
+
+```sh
+npm run deploy:pages          # static build → mirrored into the repo root
+git add -A && git commit -m "Update Pages export" && git push
+```
+
+`scripts/build-pages.mjs` builds with the Pages subpath baked in
+(`/aurora-portfolio/`), boots the SSR server locally, mirrors every route to
+static HTML, and copies all assets into the repo root — exactly what the
+legacy Pages builder serves. It also writes `404.html` (SPA-style fallback)
+and `.nojekyll`.
+
+> **After renaming the repository** to `portfolio`, rebuild with:
+> `PAGES_BASE=/portfolio/ SITE_URL=https://becomingaman2000-ship-it.github.io/portfolio npm run deploy:pages`
+> (site then lives at `…/portfolio/`).
+
 ## Media assets
 
 All media is served locally from `public/assets/` — no external CDN

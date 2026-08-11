@@ -4,13 +4,14 @@ import profile from "@/assets/profile-main.asset.json";
 import { LoopText } from "@/components/LoopText";
 import { ExpandingPill } from "@/components/ExpandingPill";
 import { CONTACT_EMAIL, GMAIL_COMPOSE } from "@/lib/contact";
+import { assetUrl } from "@/lib/asset";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Eustace Madawu — Software & Website Engineer" },
-      { property: "og:image", content: profile.url },
-      { name: "twitter:image", content: profile.url },
+      { property: "og:image", content: assetUrl(profile.url) },
+      { name: "twitter:image", content: assetUrl(profile.url) },
     ],
   }),
   component: Home,
@@ -110,7 +111,7 @@ function Home() {
             />
             <div className="glass-strong relative overflow-hidden rounded-[2.5rem] p-2">
               <img
-                src={profile.url}
+                src={assetUrl(profile.url)}
                 alt="Eustace Madawu portrait"
                 className="h-full w-full rounded-[2rem] object-cover"
               />

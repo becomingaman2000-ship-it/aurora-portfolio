@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import img from "@/assets/eustace-5.asset.json";
 import { CONTACT_EMAIL, gmailCompose } from "@/lib/contact";
+import { assetUrl } from "@/lib/asset";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -19,8 +20,8 @@ export const Route = createFileRoute("/contact")({
         content:
           "Send a message straight from Gmail — engineering engagements, product builds and partnerships.",
       },
-      { property: "og:image", content: img.url },
-      { name: "twitter:image", content: img.url },
+      { property: "og:image", content: assetUrl(img.url) },
+      { name: "twitter:image", content: assetUrl(img.url) },
     ],
   }),
   component: Contact,

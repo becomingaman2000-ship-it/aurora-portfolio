@@ -9,7 +9,8 @@
     "preview": "node .output/server/index.mjs",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "start": "node .output/server/index.mjs"
+    "start": "node .output/server/index.mjs",
+    "deploy:pages": "node scripts/build-pages.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

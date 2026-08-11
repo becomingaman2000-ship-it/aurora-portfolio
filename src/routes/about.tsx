@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import img from "@/assets/eustace-2.asset.json";
 import img2 from "@/assets/eustace-3.asset.json";
+import { assetUrl } from "@/lib/asset";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -13,8 +14,8 @@ export const Route = createFileRoute("/about")({
           "Software & website engineer, technopreneur, counsellor and event organiser based in Harare, Zimbabwe.",
       },
       { property: "og:title", content: "About — Eustace Madawu" },
-      { property: "og:image", content: img.url },
-      { name: "twitter:image", content: img.url },
+      { property: "og:image", content: assetUrl(img.url) },
+      { name: "twitter:image", content: assetUrl(img.url) },
     ],
   }),
   component: About,
@@ -67,7 +68,7 @@ function About() {
             className="glass-strong rounded-[2rem] p-2"
           >
             <img
-              src={img.url}
+              src={assetUrl(img.url)}
               alt="Eustace Madawu"
               className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
             />
@@ -198,7 +199,7 @@ function About() {
           className="glass-strong rounded-[2rem] p-2"
         >
           <img
-            src={img2.url}
+            src={assetUrl(img2.url)}
             alt="Eustace at work"
             className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
           />

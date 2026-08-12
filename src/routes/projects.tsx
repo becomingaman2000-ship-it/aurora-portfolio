@@ -55,7 +55,6 @@ function Projects() {
         </motion.div>
       </section>
 
-      {/* Makeke */}
       <motion.section
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -75,16 +74,13 @@ function Projects() {
               pastries economy, built for African cities.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 text-xs">
-              {[
-                "B2B marketplace",
-                "Realtime dispatch",
-                "Vendor & retailer roles",
-                "Payments",
-              ].map((t) => (
-                <span key={t} className="glass rounded-full px-3 py-1">
-                  {t}
-                </span>
-              ))}
+              {["B2B marketplace", "Realtime dispatch", "Vendor & retailer roles", "Payments"].map(
+                (t) => (
+                  <span key={t} className="glass rounded-full px-3 py-1">
+                    {t}
+                  </span>
+                ),
+              )}
             </div>
           </div>
         </div>
@@ -118,7 +114,6 @@ function Projects() {
         </div>
       </motion.section>
 
-      {/* Hit Campus Guide */}
       <motion.section
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -127,16 +122,12 @@ function Projects() {
       >
         <div className="flex items-start justify-between gap-6 flex-wrap">
           <div>
-            <div className="text-xs uppercase tracking-widest text-accent">
-              02 · Live
-            </div>
-            <h2 className="mt-2 text-4xl md:text-5xl font-semibold">
-              Hit Campus Guide
-            </h2>
+            <div className="text-xs uppercase tracking-widest text-accent">02 · Live</div>
+            <h2 className="mt-2 text-4xl md:text-5xl font-semibold">Hit Campus Guide</h2>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              An interactive way-finder for the Harare Institute of Technology
-              campus — helping new students, visitors, and staff navigate lecture
-              halls, offices, and facilities with ease.
+              An interactive way-finder for the Harare Institute of Technology campus —
+              helping new students, visitors, and staff navigate lecture halls, offices,
+              and facilities with ease.
             </p>
           </div>
           <a

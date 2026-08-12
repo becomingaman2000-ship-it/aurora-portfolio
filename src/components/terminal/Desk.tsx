@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import {
@@ -21,7 +20,6 @@ import {
 } from "@/lib/market/sessions";
 import { analyzeIct } from "@/lib/ict/engine";
 import type { Bias, FrameAnalysis } from "@/lib/ict/types";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { DEFAULT_OVERLAYS, IctChart, type OverlayFlags } from "./IctChart";
 import { cn } from "@/lib/utils";
 
@@ -47,7 +45,7 @@ export function Desk() {
   }, []);
 
   useEffect(() => {
-    const seen = sessionStorage.getItem("aurora-desk-disc");
+    const seen = sessionStorage.getItem("ict-desk-disc");
     if (!seen) setShowDisc(true);
   }, []);
 
@@ -88,17 +86,17 @@ export function Desk() {
       <div className="desk-bg" />
       <header className="relative z-10 border-b border-white/10 bg-[#070b12]/80 backdrop-blur-xl">
         <div className="flex flex-wrap items-center gap-3 px-3 py-2.5 md:px-5">
-          <Link to="/" className="flex items-center gap-2 pr-2">
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-teal-300 to-violet-400 text-[10px] font-bold text-[#071018]">
-              EM
+          <div className="flex items-center gap-2 pr-2">
+            <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-teal-300 to-amber-200 text-[10px] font-bold text-[#071018]">
+              ICT
             </span>
             <div className="leading-tight">
               <div className="font-display text-[11px] uppercase tracking-[0.22em] text-white/50">
-                Aurora Desk
+                ICT Desk
               </div>
               <div className="font-display text-sm font-semibold tracking-wide">EUR / USD</div>
             </div>
-          </Link>
+          </div>
 
           <div className="hidden h-8 w-px bg-white/10 md:block" />
 
@@ -155,7 +153,6 @@ export function Desk() {
             >
               <RefreshCw className={cn("h-3.5 w-3.5", tapeQ.isFetching && "animate-spin")} />
             </button>
-            <ThemeToggle />
           </div>
         </div>
 
@@ -304,7 +301,7 @@ export function Desk() {
               <h2 className="font-display text-lg">Read this first</h2>
             </div>
             <p className="mt-3 text-sm leading-relaxed text-white/70">
-              Aurora Desk encodes Inner Circle Trader concepts — market structure, liquidity, fair
+              This desk encodes Inner Circle Trader concepts — market structure, liquidity, fair
               value gaps, order blocks, killzones, SMT, AMD and the 2022 model — onto a live EUR/USD
               tape. It is a research terminal, not a crystal ball. No model predicts the market with
               certainty. Confluence scores are rule-based probabilities, not guarantees. You can lose
@@ -313,7 +310,7 @@ export function Desk() {
             <button
               className="mt-5 rounded-full bg-teal-300 px-4 py-2 text-sm font-medium text-[#071018]"
               onClick={() => {
-                sessionStorage.setItem("aurora-desk-disc", "1");
+                sessionStorage.setItem("ict-desk-disc", "1");
                 setShowDisc(false);
               }}
             >

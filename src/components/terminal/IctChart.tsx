@@ -326,7 +326,7 @@ export function IctChart({
     ctx.fillStyle = "rgba(255,255,255,0.045)";
     ctx.font = "600 18px Space Grotesk, sans-serif";
     ctx.textAlign = "left";
-    ctx.fillText("AURORA ICT  ·  EUR/USD", padL + 10, padT + 22);
+    ctx.fillText("ICT DESK  ·  EUR/USD", padL + 10, padT + 22);
 
     if (hover && hover.i >= 0 && hover.i < candles.length) {
       const c = candles[hover.i]!;

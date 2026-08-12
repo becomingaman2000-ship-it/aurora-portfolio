@@ -4,13 +4,13 @@ import { Desk } from "@/components/terminal/Desk";
 export const Route = createFileRoute("/terminal")({
   head: () => ({
     meta: [
-      { title: "Aurora Desk — EUR/USD ICT Terminal" },
+      { title: "ICT Desk — EUR/USD" },
       {
         name: "description",
         content:
-          "Institutional EUR/USD tape reader using Inner Circle Trader concepts: market structure, liquidity, fair value gaps, order blocks, killzones, SMT and the 2022 model.",
+          "EUR/USD tape reader using Inner Circle Trader concepts: market structure, liquidity, fair value gaps, order blocks, killzones, SMT and the 2022 model.",
       },
-      { property: "og:title", content: "Aurora Desk — EUR/USD ICT Terminal" },
+      { property: "og:title", content: "ICT Desk — EUR/USD" },
       {
         property: "og:description",
         content:

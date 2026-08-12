@@ -132,46 +132,6 @@ function Home() {
 
 
 
-      <Link
-        to="/terminal"
-        className="mt-20 block glass-strong group relative overflow-hidden rounded-[2rem] p-6 md:p-8"
-      >
-        <div className="pointer-events-none absolute -right-10 -top-16 h-56 w-56 rounded-full bg-primary/25 blur-3xl transition group-hover:bg-accent/30" />
-        <div className="relative grid gap-6 md:grid-cols-[1.3fr_0.7fr] md:items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-primary">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
-              Live product · Aurora Desk
-            </div>
-            <h2 className="mt-4 font-display text-3xl md:text-5xl font-semibold leading-[1.05]">
-              EUR/USD, read the way
-              <span className="text-gradient"> ICT desks read it.</span>
-            </h2>
-            <p className="mt-3 max-w-xl text-sm md:text-base text-muted-foreground">
-              Multi-timeframe market structure, liquidity, fair value gaps, order blocks,
-              killzones, SMT and the 2022 model — scored into a delivery path with
-              invalidation. Open the terminal.
-            </p>
-            <div className="mt-5 text-sm font-medium text-primary group-hover:translate-x-1 transition-transform">
-              Launch Aurora Desk →
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-2 text-xs">
-            {[
-              ["HTF bias", "Weekly + daily book"],
-              ["Silver Bullet", "Timed NY windows"],
-              ["Draw on liq.", "PDH / PWL / EQH"],
-              ["Confluence", "6-factor radar"],
-            ].map(([k, v]) => (
-              <div key={k} className="glass rounded-2xl px-3 py-3">
-                <div className="text-[10px] uppercase tracking-widest text-muted-foreground">{k}</div>
-                <div className="mt-1 font-medium">{v}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Link>
-
       <section className="mt-24 grid gap-4 md:grid-cols-3">
         {[
           {

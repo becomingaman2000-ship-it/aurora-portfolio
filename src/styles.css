@@ -236,3 +236,44 @@
   transform-origin: 50% 50%;
   transform-box: fill-box;
 }
+
+/* ——— Aurora Desk (ICT terminal) ——— */
+.desk {
+  position: relative;
+  background: #070b12;
+  color: #e8ecf5;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+.desk .font-mono {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.desk-bg {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(900px 480px at 8% -10%, rgba(46, 230, 176, 0.12), transparent 55%),
+    radial-gradient(800px 420px at 100% 0%, rgba(139, 92, 246, 0.14), transparent 50%),
+    radial-gradient(700px 500px at 70% 110%, rgba(232, 200, 114, 0.06), transparent 50%),
+    #070b12;
+}
+.desk-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 75%);
+}
+.desk-panel {
+  position: relative;
+  border-radius: 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 14, 22, 0.72);
+  box-shadow:
+    0 24px 60px -28px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px) saturate(140%);
+}

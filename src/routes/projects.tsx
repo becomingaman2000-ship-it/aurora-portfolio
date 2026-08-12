@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { HoverExpand } from "@/components/HoverExpand";
 import makeke1 from "@/assets/makeke-1.asset.json";
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/projects")({
       {
         name: "description",
         content:
-          "Selected work: Makeke — a B2B logistics platform for bakeries — and Hit Campus Guide.",
+          "Selected work: Makeke — a B2B logistics platform for bakeries — Hit Campus Guide, and Aurora Desk.",
       },
       { property: "og:title", content: "Projects — Eustace Madawu" },
       { property: "og:image", content: makeke1.url },
@@ -55,7 +55,6 @@ function Projects() {
         </motion.div>
       </section>
 
-      {/* Makeke */}
       <motion.section
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -75,16 +74,13 @@ function Projects() {
               pastries economy, built for African cities.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 text-xs">
-              {[
-                "B2B marketplace",
-                "Realtime dispatch",
-                "Vendor & retailer roles",
-                "Payments",
-              ].map((t) => (
-                <span key={t} className="glass rounded-full px-3 py-1">
-                  {t}
-                </span>
-              ))}
+              {["B2B marketplace", "Realtime dispatch", "Vendor & retailer roles", "Payments"].map(
+                (t) => (
+                  <span key={t} className="glass rounded-full px-3 py-1">
+                    {t}
+                  </span>
+                ),
+              )}
             </div>
           </div>
         </div>
@@ -118,7 +114,6 @@ function Projects() {
         </div>
       </motion.section>
 
-      {/* Hit Campus Guide */}
       <motion.section
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -127,16 +122,12 @@ function Projects() {
       >
         <div className="flex items-start justify-between gap-6 flex-wrap">
           <div>
-            <div className="text-xs uppercase tracking-widest text-accent">
-              02 · Live
-            </div>
-            <h2 className="mt-2 text-4xl md:text-5xl font-semibold">
-              Hit Campus Guide
-            </h2>
+            <div className="text-xs uppercase tracking-widest text-accent">02 · Live</div>
+            <h2 className="mt-2 text-4xl md:text-5xl font-semibold">Hit Campus Guide</h2>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              An interactive way-finder for the Harare Institute of Technology
-              campus — helping new students, visitors, and staff navigate lecture
-              halls, offices, and facilities with ease.
+              An interactive way-finder for the Harare Institute of Technology campus —
+              helping new students, visitors, and staff navigate lecture halls, offices,
+              and facilities with ease.
             </p>
           </div>
           <a
@@ -158,6 +149,40 @@ function Projects() {
             { src: nav2.url, alt: "Hit Campus Guide", code: "05" },
           ]}
         />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        className="glass-strong rounded-[2rem] p-6 md:p-10 space-y-6"
+      >
+        <div className="flex items-start justify-between gap-6 flex-wrap">
+          <div>
+            <div className="text-xs uppercase tracking-widest text-primary">
+              03 · Live terminal
+            </div>
+            <h2 className="mt-2 text-4xl md:text-5xl font-semibold">Aurora Desk</h2>
+            <p className="mt-3 max-w-2xl text-muted-foreground">
+              An institutional EUR/USD reader built on Inner Circle Trader concepts —
+              structure, liquidity, fair value gaps, order blocks, killzones, SMT and the
+              2022 model — scored into a delivery path you can actually invalidate.
+            </p>
+          </div>
+          <Link
+            to="/terminal"
+            className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 self-start"
+          >
+            Open the desk →
+          </Link>
+        </div>
+        <div className="flex flex-wrap gap-2 text-xs">
+          {["ICT / SMC", "Multi-timeframe", "Killzones", "SMT EUR–GBP", "Live tape"].map((t) => (
+            <span key={t} className="glass rounded-full px-3 py-1">
+              {t}
+            </span>
+          ))}
+        </div>
       </motion.section>
     </div>
   );

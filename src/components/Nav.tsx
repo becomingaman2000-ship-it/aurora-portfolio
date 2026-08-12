@@ -29,7 +29,7 @@ export function Nav() {
           <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent text-[10px] font-bold text-primary-foreground">
             EM
           </span>
-          <span className="hidden sm:inline">Eustace Madawu</span>
+          <span className="hidden sm:inline">Eustace .T. Madawu</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-1">

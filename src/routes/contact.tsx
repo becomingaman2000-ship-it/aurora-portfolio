@@ -13,7 +13,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact Eustace Madawu to hire a freelance software & website engineer: quotes, timelines and delivery plans — remote worldwide, based in Harare, Zimbabwe.",
+          "Contact Eustace .T. Madawu to hire a freelance software & website engineer: quotes, timelines and delivery plans — remote worldwide, based in Harare, Zimbabwe.",
       },
       { property: "og:title", content: "Contact — Hire a Freelance Software & Website Engineer" },
       {

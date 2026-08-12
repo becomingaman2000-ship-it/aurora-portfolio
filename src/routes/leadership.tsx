@@ -7,13 +7,13 @@ import { assetUrl } from "@/lib/asset";
 export const Route = createFileRoute("/leadership")({
   head: () => ({
     meta: [
-      { title: "Leadership & Community — Eustace Madawu" },
+      { title: "Leadership & Community — Eustace .T. Madawu" },
       {
         name: "description",
         content:
           "Trusted with people, programmes, and institutional responsibility — counselling, head-boy leadership, and event organising.",
       },
-      { property: "og:title", content: "Leadership & Community — Eustace Madawu" },
+      { property: "og:title", content: "Leadership & Community — Eustace .T. Madawu" },
       { property: "og:url", content: absUrl("/leadership") },
       { property: "og:image", content: absUrl(img.url) },
       { name: "twitter:image", content: absUrl(img.url) },

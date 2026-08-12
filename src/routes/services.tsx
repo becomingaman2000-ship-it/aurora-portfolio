@@ -7,15 +7,15 @@ import { assetUrl } from "@/lib/asset";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Hire a Software & Website Engineer | Eustace Madawu" },
+      { title: "Services — Hire a Software & Website Engineer | Eustace .T. Madawu" },
       {
         name: "description",
         content:
-          "Hire freelance engineer Eustace Madawu: website engineering, software engineering, product design, databases, payments and data — remote worldwide, clear quotes.",
+          "Hire freelance engineer Eustace .T. Madawu: website engineering, software engineering, product design, databases, payments and data — remote worldwide, clear quotes.",
       },
       {
         property: "og:title",
-        content: "Services — Hire a Software & Website Engineer | Eustace Madawu",
+        content: "Services — Hire a Software & Website Engineer | Eustace .T. Madawu",
       },
       { property: "og:url", content: absUrl("/services") },
       { property: "og:image", content: absUrl(img.url) },

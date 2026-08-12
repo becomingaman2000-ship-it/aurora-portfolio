@@ -30,32 +30,32 @@ const PAGES: Page[] = [
     path: "/",
     priority: "1.0",
     images: [
-      P("/assets/profile-main.jpg", "Eustace Madawu — freelance software and website engineer, Harare, Zimbabwe"),
+      P("/assets/profile-main.jpg", "Eustace .T. Madawu — freelance software and website engineer, Harare, Zimbabwe"),
     ],
   },
   {
     path: "/services",
     priority: "0.9",
-    images: [P("/assets/eustace-4.jpg", "Eustace Madawu speaking at a Harare Institute of Technology event")],
+    images: [P("/assets/eustace-4.jpg", "Eustace .T. Madawu speaking at a Harare Institute of Technology event")],
   },
   {
     path: "/contact",
     priority: "0.9",
-    images: [P("/assets/eustace-5.jpg", "Eustace Madawu — contact for freelance website and software projects")],
+    images: [P("/assets/eustace-5.jpg", "Eustace .T. Madawu — contact for freelance website and software projects")],
   },
   {
     path: "/about",
     priority: "0.8",
     images: [
-      P("/assets/eustace-2.jpg", "Eustace Madawu portrait — software engineer from Harare, Zimbabwe"),
-      P("/assets/eustace-3.jpg", "Eustace Madawu studio headshot"),
+      P("/assets/eustace-2.jpg", "Eustace .T. Madawu portrait — software engineer from Harare, Zimbabwe"),
+      P("/assets/eustace-3.jpg", "Eustace .T. Madawu studio headshot"),
     ],
   },
   {
     path: "/projects",
     priority: "0.8",
     images: [
-      P("/assets/eustace-5.jpg", "Eustace Madawu — builder of Makeke and Hit Campus Guide"),
+      P("/assets/eustace-5.jpg", "Eustace .T. Madawu — builder of Makeke and Hit Campus Guide"),
       P("/assets/makeke-1.jpg", "Makeke marketplace web app — screenshot 1"),
       P("/assets/makeke-2.jpg", "Makeke marketplace web app — screenshot 2"),
       P("/assets/nav-1.jpg", "Hit Campus Guide app — screenshot 1"),
@@ -66,16 +66,16 @@ const PAGES: Page[] = [
       {
         content: "/assets/makeke-pitch.mp4",
         thumbnail: "/assets/makeke-1.jpg",
-        title: "Makeke — product pitch by Eustace Madawu",
+        title: "Makeke — product pitch by Eustace .T. Madawu",
         description:
-          "Eustace Madawu pitching Makeke, the Zimbabwean campus marketplace web app he designed, built and shipped.",
+          "Eustace .T. Madawu pitching Makeke, the Zimbabwean campus marketplace web app he designed, built and shipped.",
       },
     ],
   },
   {
     path: "/leadership",
     priority: "0.7",
-    images: [P("/assets/eustace-6.jpg", "Eustace Madawu — student leadership and event organising")],
+    images: [P("/assets/eustace-6.jpg", "Eustace .T. Madawu — student leadership and event organising")],
   },
 ];
 

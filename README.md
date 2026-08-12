@@ -1,6 +1,6 @@
-# Portfolio — Eustace Madawu
+# Portfolio — Eustace .T. Madawu
 
-Personal portfolio website of **Eustace Madawu** — software & website engineer,
+Personal portfolio website of **Eustace .T. Madawu** — software & website engineer,
 technopreneur, trained counsellor and event organiser from Harare, Zimbabwe.
 
 Minimalist glassmorphic spatial UI with animated aurora backgrounds, light/dark

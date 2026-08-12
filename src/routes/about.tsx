@@ -8,13 +8,13 @@ import { assetUrl } from "@/lib/asset";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Eustace Madawu, Freelance Software & Website Engineer" },
+      { title: "About — Eustace .T. Madawu, Freelance Software & Website Engineer" },
       {
         name: "description",
         content:
-          "About Eustace Madawu — freelance software & website engineer from Harare, Zimbabwe: skills, education, languages and the story behind the shipped products.",
+          "About Eustace .T. Madawu — freelance software & website engineer from Harare, Zimbabwe: skills, education, languages and the story behind the shipped products.",
       },
-      { property: "og:title", content: "About — Eustace Madawu" },
+      { property: "og:title", content: "About — Eustace .T. Madawu" },
       { property: "og:url", content: absUrl("/about") },
       { property: "og:image", content: absUrl(img.url) },
       { name: "twitter:image", content: absUrl(img.url) },
@@ -72,7 +72,7 @@ function About() {
           >
             <img
               src={assetUrl(img.url)}
-              alt="Eustace Madawu"
+              alt="Eustace .T. Madawu"
               className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
               decoding="async"
             />
@@ -85,7 +85,7 @@ function About() {
               Engineer, builder, <span className="text-gradient">leader.</span>
             </h1>
             <p className="text-muted-foreground text-base md:text-lg">
-              Eustace Madawu is a Zimbabwean software and website engineer completing a Bachelor of
+              Eustace .T. Madawu is a Zimbabwean software and website engineer completing a Bachelor of
               Technology Honours Degree in Electronic Commerce at the Harare Institute of Technology
               (HIT), School of Business Management Sciences. He operates at the intersection of
               full-stack engineering, digital business strategy, and product design.

@@ -85,7 +85,7 @@
     "typescript-eslint": "^8.56.1",
     "vite": "^8.0.16"
   },
-  "description": "Eustace Madawu — portfolio. Software & website engineering, products, leadership. Built with TanStack Start + React + Tailwind CSS v4.",
+  "description": "Eustace .T. Madawu — portfolio. Software & website engineering, products, leadership. Built with TanStack Start + React + Tailwind CSS v4.",
   "version": "1.0.0",
   "engines": {
     "node": ">=20.19.0"

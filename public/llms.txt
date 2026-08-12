@@ -1,6 +1,6 @@
-# Eustace Madawu — Freelance Software & Website Engineer
+# Eustace .T. Madawu — Freelance Software & Website Engineer
 
-> Eustace Madawu is a freelance software & website engineer from Harare,
+> Eustace .T. Madawu is a freelance software & website engineer from Harare,
 > Zimbabwe, working remotely with clients worldwide. He designs, builds and
 > ships full-stack websites, web applications and products end-to-end:
 > UI/UX, frontend, backend, databases, payments and deployment.

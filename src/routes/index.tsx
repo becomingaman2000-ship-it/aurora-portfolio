@@ -15,11 +15,11 @@ import {
 
 const FAQ = [
   {
-    q: "Who is Eustace Madawu?",
-    a: "Eustace Madawu is a freelance software & website engineer from Harare, Zimbabwe — a B.Tech (Hons) Electronic Commerce student at the Harare Institute of Technology, technopreneur, trained counsellor and event organiser. He designs, builds and ships full-stack products end-to-end for clients worldwide.",
+    q: "Who is Eustace .T. Madawu?",
+    a: "Eustace .T. Madawu is a freelance software & website engineer from Harare, Zimbabwe — a B.Tech (Hons) Electronic Commerce student at the Harare Institute of Technology, technopreneur, trained counsellor and event organiser. He designs, builds and ships full-stack products end-to-end for clients worldwide.",
   },
   {
-    q: "Can I hire Eustace Madawu to build a website or software?",
+    q: "Can I hire Eustace .T. Madawu to build a website or software?",
     a: "Yes. Eustace takes freelance website and software engineering engagements — marketing sites, e-commerce stores, full-stack web applications and product builds — working remotely with clients anywhere in the world. Email him with your idea and scope to get a quote and timeline.",
   },
   {
@@ -43,11 +43,11 @@ const FAQ = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Eustace Madawu — Freelance Software & Website Engineer" },
+      { title: "Eustace .T. Madawu — Freelance Software & Website Engineer" },
       {
         name: "description",
         content:
-          "Hire Eustace Madawu — freelance software & website engineer from Harare, Zimbabwe, working remotely worldwide. Websites, web apps and full-stack products designed, built and shipped.",
+          "Hire Eustace .T. Madawu — freelance software & website engineer from Harare, Zimbabwe, working remotely worldwide. Websites, web apps and full-stack products designed, built and shipped.",
       },
       { property: "og:url", content: absUrl("/") },
       { property: "og:image", content: absUrl(profile.url) },
@@ -86,7 +86,7 @@ function Home() {
             />
           </h1>
           <p className="max-w-xl text-base md:text-lg text-muted-foreground">
-            I'm <b className="text-foreground">Eustace Madawu</b> — a software & website engineer,
+            I'm <b className="text-foreground">Eustace .T. Madawu</b> — a software & website engineer,
             technopreneur, trained counsellor and event organiser from Harare, Zimbabwe. I design
             and ship full-stack products end-to-end.
           </p>
@@ -149,12 +149,12 @@ function Home() {
             <div className="glass-strong relative overflow-hidden rounded-[2.5rem] p-2">
               <img
                 src={assetUrl(profile.url)}
-                alt="Eustace Madawu portrait"
+                alt="Eustace .T. Madawu portrait"
                 className="h-full w-full rounded-[2rem] object-cover"
               />
               <div className="absolute bottom-6 left-6 right-6 glass rounded-2xl p-3 flex items-center justify-between text-xs">
                 <div>
-                  <div className="font-semibold">Eustace Madawu</div>
+                  <div className="font-semibold">Eustace .T. Madawu</div>
                   <div className="text-muted-foreground">Harare, Zimbabwe</div>
                 </div>
                 <span className="rounded-full bg-primary/20 px-2 py-1 text-primary">Tier SSS</span>

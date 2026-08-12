@@ -14,13 +14,13 @@ import { assetUrl } from "@/lib/asset";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects & Products by Eustace Madawu — Makeke, Hit Campus Guide" },
+      { title: "Projects & Products by Eustace .T. Madawu — Makeke, Hit Campus Guide" },
       {
         name: "description",
         content:
-          "Products engineered by Eustace Madawu: Makeke — a B2B pastry logistics marketplace — and Hit Campus Guide, an interactive campus way-finder. Screenshots and pitch video.",
+          "Products engineered by Eustace .T. Madawu: Makeke — a B2B pastry logistics marketplace — and Hit Campus Guide, an interactive campus way-finder. Screenshots and pitch video.",
       },
-      { property: "og:title", content: "Projects & Products — Eustace Madawu" },
+      { property: "og:title", content: "Projects & Products — Eustace .T. Madawu" },
       { property: "og:url", content: absUrl("/projects") },
       { property: "og:image", content: absUrl(makeke1.url) },
       { name: "twitter:image", content: absUrl(makeke1.url) },

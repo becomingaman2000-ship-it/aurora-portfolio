@@ -70,16 +70,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       // Google Search Console verification (HTML tag method) — on every route.
       { name: "google-site-verification", content: GOOGLE_SITE_VERIFICATION },
-      { title: "Eustace Madawu — Freelance Software & Website Engineer" },
+      { title: "Eustace .T. Madawu — Freelance Software & Website Engineer" },
       {
         name: "description",
         content:
-          "Hire Eustace Madawu — freelance software & website engineer from Harare, Zimbabwe, working remotely worldwide. Websites, web apps and full-stack products designed, built and shipped.",
+          "Hire Eustace .T. Madawu — freelance software & website engineer from Harare, Zimbabwe, working remotely worldwide. Websites, web apps and full-stack products designed, built and shipped.",
       },
-      { name: "author", content: "Eustace Madawu" },
-      { property: "og:site_name", content: "Eustace Madawu — Portfolio" },
+      { name: "author", content: "Eustace .T. Madawu" },
+      { property: "og:site_name", content: "Eustace .T. Madawu — Portfolio" },
       { property: "og:locale", content: "en_US" },
-      { property: "og:title", content: "Eustace Madawu — Freelance Software & Website Engineer" },
+      { property: "og:title", content: "Eustace .T. Madawu — Freelance Software & Website Engineer" },
       {
         property: "og:description",
         content:
@@ -88,7 +88,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:image", content: `${SITE_URL}/assets/profile-main.jpg` },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Eustace Madawu — Freelance Software & Website Engineer" },
+      { name: "twitter:title", content: "Eustace .T. Madawu — Freelance Software & Website Engineer" },
       {
         name: "twitter:description",
         content:
@@ -163,7 +163,7 @@ function RootComponent() {
         </ScrollStroke>
       </main>
       <footer className="border-t border-border/40 py-8 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Eustace Madawu · Harare, Zimbabwe
+        © {new Date().getFullYear()} Eustace .T. Madawu · Harare, Zimbabwe
       </footer>
     </QueryClientProvider>
   );

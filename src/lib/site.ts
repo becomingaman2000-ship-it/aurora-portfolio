@@ -6,7 +6,7 @@ import { CONTACT_EMAIL } from "./contact";
  * Update this when the site moves to a custom domain or the repo is renamed.
  */
 export const SITE_URL = "https://becomingaman2000-ship-it.github.io/aurora-portfolio";
-export const SITE_NAME = "Eustace Madawu — Software & Website Engineer";
+export const SITE_NAME = "Eustace .T. Madawu — Software & Website Engineer";
 export const PERSON_ID = `${SITE_URL}/#person`;
 
 /**
@@ -63,7 +63,8 @@ export function personJsonLd() {
   return {
     "@type": "Person",
     "@id": PERSON_ID,
-    name: "Eustace Madawu",
+    name: "Eustace .T. Madawu",
+    alternateName: "Eustace Madawu",
     url: SITE_URL,
     image: absUrl("/assets/profile-main.jpg"),
     email: `mailto:${CONTACT_EMAIL}`,
@@ -95,7 +96,7 @@ export function websiteJsonLd() {
     url: SITE_URL,
     name: SITE_NAME,
     description:
-      "Portfolio of Eustace Madawu — freelance software & website engineer available for hire worldwide.",
+      "Portfolio of Eustace .T. Madawu — freelance software & website engineer available for hire worldwide.",
     inLanguage: "en",
     author: { "@id": PERSON_ID },
     creator: { "@id": PERSON_ID },
@@ -118,7 +119,7 @@ export function faqJsonLd(faqs: { q: string; a: string }[]) {
 export function professionalServiceJsonLd() {
   return {
     "@type": "ProfessionalService",
-    name: "Eustace Madawu — Software & Website Engineering",
+    name: "Eustace .T. Madawu — Software & Website Engineering",
     url: `${SITE_URL}/services`,
     provider: { "@id": PERSON_ID },
     areaServed: "Worldwide (remote)",

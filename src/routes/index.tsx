@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import profile from "@/assets/Eustace_Madawu_Photos/123375.jpg";
+import portfolioVideo from "../../deliverables/portfolio-ad/eustace-madawu-portfolio-ad.mp4";
+import portfolioVideoPoster from "../../deliverables/portfolio-ad/cards/00-opening.jpg";
 import { LoopText } from "@/components/LoopText";
 import { ExpandingPill } from "@/components/ExpandingPill";
 import { CONTACT_EMAIL, GMAIL_COMPOSE } from "@/lib/contact";
@@ -130,7 +132,54 @@ function Home() {
         </motion.div>
       </section>
 
+      <section aria-labelledby="portfolio-film-title" className="relative mt-24">
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-[12%] top-20 h-2/3 rounded-full bg-primary/20 blur-3xl"
+        />
 
+        <div className="relative mb-7 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <span className="glass inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs uppercase tracking-widest text-muted-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+              60-second walkthrough
+            </span>
+            <h2
+              id="portfolio-film-title"
+              className="mt-4 font-display text-3xl font-semibold sm:text-4xl md:text-5xl"
+            >
+              See the portfolio <span className="text-gradient">in motion.</span>
+            </h2>
+          </div>
+          <p className="max-w-md text-sm leading-relaxed text-muted-foreground md:text-right">
+            Watch the complete journey — from engineering services and shipped products to
+            leadership, visual themes, and the contact flow.
+          </p>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
+          className="glass-strong relative overflow-hidden rounded-[1.75rem] p-2 sm:rounded-[2.25rem] sm:p-3"
+        >
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            poster={portfolioVideoPoster}
+            aria-label="One-minute walkthrough of the Eustace Madawu portfolio website"
+            className="aspect-video w-full rounded-[1.25rem] bg-black object-cover sm:rounded-[1.65rem]"
+          >
+            <source src={portfolioVideo} type="video/mp4" />
+            Your browser does not support embedded video. {" "}
+            <a href={portfolioVideo} download>
+              Download the portfolio walkthrough instead.
+            </a>
+          </video>
+        </motion.div>
+      </section>
 
       <section className="mt-24 grid gap-4 md:grid-cols-3">
         {[

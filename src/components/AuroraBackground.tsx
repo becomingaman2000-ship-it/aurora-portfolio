@@ -9,29 +9,25 @@ export function AuroraBackground() {
       <div
         className="animate-aurora-1 absolute -top-1/3 -left-1/4 h-[70vmax] w-[70vmax] rounded-full opacity-70 blur-3xl"
         style={{
-          background:
-            "radial-gradient(circle at 30% 30%, var(--color-aurora-1), transparent 60%)",
+          background: "radial-gradient(circle at 30% 30%, var(--color-aurora-1), transparent 60%)",
         }}
       />
       <div
         className="animate-aurora-2 absolute -bottom-1/3 -right-1/4 h-[75vmax] w-[75vmax] rounded-full opacity-70 blur-3xl"
         style={{
-          background:
-            "radial-gradient(circle at 60% 40%, var(--color-aurora-2), transparent 60%)",
+          background: "radial-gradient(circle at 60% 40%, var(--color-aurora-2), transparent 60%)",
         }}
       />
       <div
         className="animate-aurora-3 absolute top-1/4 left-1/3 h-[55vmax] w-[55vmax] rounded-full opacity-50 blur-3xl"
         style={{
-          background:
-            "radial-gradient(circle at 50% 50%, var(--color-aurora-3), transparent 60%)",
+          background: "radial-gradient(circle at 50% 50%, var(--color-aurora-3), transparent 60%)",
         }}
       />
       <div
         className="animate-aurora-1 absolute top-1/2 -left-1/6 h-[45vmax] w-[45vmax] rounded-full opacity-40 blur-3xl"
         style={{
-          background:
-            "radial-gradient(circle at 50% 50%, var(--color-aurora-4), transparent 65%)",
+          background: "radial-gradient(circle at 50% 50%, var(--color-aurora-4), transparent 65%)",
           animationDelay: "-8s",
         }}
       />

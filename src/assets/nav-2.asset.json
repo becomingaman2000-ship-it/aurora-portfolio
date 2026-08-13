@@ -1,11 +1,8 @@
 {
   "version": 1,
-  "asset_id": "0d30b77f-a14a-4a3d-aff3-1090a7297fca",
-  "project_id": "451fea96-8839-43f0-baec-d2d49b0dd462",
-  "url": "/__l5e/assets-v1/0d30b77f-a14a-4a3d-aff3-1090a7297fca/nav-2.png",
-  "r2_key": "a/v1/451fea96-8839-43f0-baec-d2d49b0dd462/0d30b77f-a14a-4a3d-aff3-1090a7297fca/nav-2.png",
-  "original_filename": "nav-2.png",
+  "url": "/assets/nav-2.jpg",
+  "original_filename": "nav-2.jpg",
   "size": 41939,
-  "content_type": "image/png",
+  "content_type": "image/jpeg",
   "created_at": "2026-07-01T12:25:56Z"
 }

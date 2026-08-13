@@ -1,21 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import img from "@/assets/Eustace_Madawu_Photos/123367.jpg";
-import img2 from "@/assets/Eustace_Madawu_Photos/123375.jpg";
+import img from "@/assets/eustace-2.asset.json";
+import img2 from "@/assets/eustace-3.asset.json";
+import { absUrl, canonical } from "@/lib/site";
+import { assetUrl } from "@/lib/asset";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Eustace Madawu" },
+      { title: "About — Eustace .T. Madawu, Freelance Software & Website Engineer" },
       {
         name: "description",
         content:
-          "Software & website engineer, technopreneur, counsellor and event organiser based in Harare, Zimbabwe.",
+          "About Eustace .T. Madawu — freelance software & website engineer from Harare, Zimbabwe: skills, education, languages and the story behind the shipped products.",
       },
-      { property: "og:title", content: "About — Eustace Madawu" },
-      { property: "og:image", content: img },
-      { name: "twitter:image", content: img },
+      { property: "og:title", content: "About — Eustace .T. Madawu" },
+      { property: "og:url", content: absUrl("/about") },
+      { property: "og:image", content: absUrl(img.url) },
+      { name: "twitter:image", content: absUrl(img.url) },
     ],
+    links: [canonical("/about")],
   }),
   component: About,
 });
@@ -63,13 +67,14 @@ function About() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="glass-strong rounded-[2rem] p-2"
           >
             <img
-              src={img}
-              alt="Eustace Madawu"
+              src={assetUrl(img.url)}
+              alt="Eustace .T. Madawu"
               className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
+              decoding="async"
             />
           </motion.div>
           <div className="space-y-5">
@@ -80,30 +85,23 @@ function About() {
               Engineer, builder, <span className="text-gradient">leader.</span>
             </h1>
             <p className="text-muted-foreground text-base md:text-lg">
-              Eustace Madawu is a Zimbabwean software and website engineer completing a
-              Bachelor of Technology Honours Degree in Electronic Commerce at the
-              Harare Institute of Technology (HIT), School of Business Management
-              Sciences. He operates at the intersection of full-stack engineering,
-              digital business strategy, and product design.
+              Eustace .T. Madawu is a Zimbabwean software and website engineer completing a Bachelor of
+              Technology Honours Degree in Electronic Commerce at the Harare Institute of Technology
+              (HIT), School of Business Management Sciences. He operates at the intersection of
+              full-stack engineering, digital business strategy, and product design.
             </p>
             <p className="text-muted-foreground text-base md:text-lg">
-              Beyond engineering, Eustace brings a rare combination of technical depth
-              and people leadership — a trained counsellor, Overseer of Peer
-              Counselling & Psychological Services at HIT, former Head Boy of Red Cross
-              Independent College, and a trusted event organiser. Advanced technical
-              craft, paired with proven leadership.
+              Beyond engineering, Eustace brings a rare combination of technical depth and people
+              leadership — a trained counsellor, Overseer of Peer Counselling & Psychological
+              Services at HIT, former Head Boy of Red Cross Independent College, and a trusted event
+              organiser. Advanced technical craft, paired with proven leadership.
             </p>
             <div className="flex flex-wrap gap-2 pt-2">
-              {["Full-stack", "Product design", "Systems & Data", "Leadership"].map(
-                (t) => (
-                  <span
-                    key={t}
-                    className="glass rounded-full px-3 py-1 text-xs"
-                  >
-                    {t}
-                  </span>
-                ),
-              )}
+              {["Full-stack", "Product design", "Systems & Data", "Leadership"].map((t) => (
+                <span key={t} className="glass rounded-full px-3 py-1 text-xs">
+                  {t}
+                </span>
+              ))}
             </div>
           </div>
         </section>
@@ -130,21 +128,19 @@ function About() {
               key={group}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
+              viewport={{ once: false, margin: "-60px" }}
               className="glass rounded-3xl p-6"
             >
-              <div className="text-xs uppercase tracking-widest text-primary">
-                {group}
-              </div>
+              <div className="text-xs uppercase tracking-widest text-primary">{group}</div>
               <ul className="mt-4 space-y-2">
                 {items.map(([name, level]) => (
                   <li
                     key={name}
-                    className="flex items-center justify-between text-sm border-b border-border/40 pb-2 last:border-0"
+                    className="flex items-center justify-between gap-3 text-sm border-b border-border/40 pb-2 last:border-0"
                   >
-                    <span>{name}</span>
+                    <span className="min-w-0">{name}</span>
                     <span
-                      className={`text-[10px] uppercase tracking-wider rounded-full px-2 py-0.5 ${
+                      className={`shrink-0 text-[10px] uppercase tracking-wider rounded-full px-2 py-0.5 ${
                         level === "Advanced"
                           ? "bg-primary/15 text-primary"
                           : "bg-accent/15 text-accent"
@@ -165,9 +161,7 @@ function About() {
           <span className="glass inline-flex rounded-full px-3 py-1 text-xs uppercase tracking-widest">
             Languages · Education
           </span>
-          <h2 className="text-3xl md:text-4xl font-semibold">
-            Fluent across worlds
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-semibold">Fluent across worlds</h2>
           <div className="grid grid-cols-3 gap-3 max-w-md">
             {[
               ["English", "Fluent"],
@@ -183,20 +177,18 @@ function About() {
             ))}
           </div>
           <div className="glass rounded-3xl p-6 space-y-3">
-            <div className="text-xs uppercase tracking-widest text-primary">
-              Education
-            </div>
+            <div className="text-xs uppercase tracking-widest text-primary">Education</div>
             <ul className="space-y-2 text-sm">
               <li>
-                <b>Harare Institute of Technology</b> — B.Tech (Hons) in Electronic
-                Commerce · 2024–Present
+                <b>Harare Institute of Technology</b> — B.Tech (Hons) in Electronic Commerce ·
+                2024–Present
               </li>
               <li>
                 <b>HIT</b> — Certificate in Higher & Tertiary Education (E-Commerce)
               </li>
               <li>
-                <b>Red Cross Independent College</b> — A-Level: Economics, Business
-                Studies, Computer Science · 2023
+                <b>Red Cross Independent College</b> — A-Level: Economics, Business Studies,
+                Computer Science · 2023
               </li>
               <li>
                 <b>St John's High School, Chikwaka</b> — O-Level · 2021
@@ -207,13 +199,15 @@ function About() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="glass-strong rounded-[2rem] p-2"
         >
           <img
-            src={img2}
+            src={assetUrl(img2.url)}
             alt="Eustace at work"
             className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </motion.div>
       </section>

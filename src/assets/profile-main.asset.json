@@ -1,9 +1,6 @@
 {
   "version": 1,
-  "asset_id": "f52fd610-66bc-4572-9fa9-0f4fc4df28f2",
-  "project_id": "451fea96-8839-43f0-baec-d2d49b0dd462",
-  "url": "/__l5e/assets-v1/f52fd610-66bc-4572-9fa9-0f4fc4df28f2/profile-main.jpg",
-  "r2_key": "a/v1/451fea96-8839-43f0-baec-d2d49b0dd462/f52fd610-66bc-4572-9fa9-0f4fc4df28f2/profile-main.jpg",
+  "url": "/assets/profile-main.jpg",
   "original_filename": "profile-main.jpg",
   "size": 81200,
   "content_type": "image/jpeg",

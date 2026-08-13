@@ -1,27 +1,31 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { HoverExpand } from "@/components/HoverExpand";
-import makeke1 from "@/assets/projects/Makeke1.PNG";
-import makeke2 from "@/assets/projects/Makeke 2.PNG";
-import makekeVideo from "@/assets/Makeke-pitch.mp4";
-import nav1 from "@/assets/projects/nav.PNG";
-import nav2 from "@/assets/projects/nav2.PNG";
-import nav3 from "@/assets/projects/nav3.PNG";
-import img from "@/assets/Eustace_Madawu_Photos/123383.jpg";
+import makeke1 from "@/assets/makeke-1.asset.json";
+import makeke2 from "@/assets/makeke-2.asset.json";
+import makekeVideo from "@/assets/makeke-pitch.asset.json";
+import nav1 from "@/assets/nav-1.asset.json";
+import nav2 from "@/assets/nav-2.asset.json";
+import nav3 from "@/assets/nav-3.asset.json";
+import img from "@/assets/eustace-5.asset.json";
+import { absUrl, canonical } from "@/lib/site";
+import { assetUrl } from "@/lib/asset";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects — Eustace Madawu" },
+      { title: "Projects & Products by Eustace .T. Madawu — Makeke, Hit Campus Guide" },
       {
         name: "description",
         content:
-          "Selected work: Makeke — a B2B logistics platform for bakeries — and Hit Campus Guide.",
+          "Products engineered by Eustace .T. Madawu: Makeke — a B2B pastry logistics marketplace — and Hit Campus Guide, an interactive campus way-finder. Screenshots and pitch video.",
       },
-      { property: "og:title", content: "Projects — Eustace Madawu" },
-      { property: "og:image", content: makeke1 },
-      { name: "twitter:image", content: makeke1 },
+      { property: "og:title", content: "Projects & Products — Eustace .T. Madawu" },
+      { property: "og:url", content: absUrl("/projects") },
+      { property: "og:image", content: absUrl(makeke1.url) },
+      { name: "twitter:image", content: absUrl(makeke1.url) },
     ],
+    links: [canonical("/projects")],
   }),
   component: Projects,
 });
@@ -38,8 +42,8 @@ function Projects() {
             Products <span className="text-gradient">shipped & live.</span>
           </h1>
           <p className="text-muted-foreground max-w-xl">
-            Full-stack builds — designed, engineered, and delivered end-to-end.
-            Click through, watch the pitch, or try it live.
+            Full-stack builds — designed, engineered, and delivered end-to-end. Click through, watch
+            the pitch, or try it live.
           </p>
         </div>
         <motion.div
@@ -48,9 +52,10 @@ function Projects() {
           className="glass-strong rounded-[2rem] p-2"
         >
           <img
-            src={img}
+            src={assetUrl(img.url)}
             alt="Eustace presenting"
             className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
+            decoding="async"
           />
         </motion.div>
       </section>
@@ -59,32 +64,26 @@ function Projects() {
       <motion.section
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: false, margin: "-80px" }}
         className="glass-strong rounded-[2rem] p-6 md:p-10 space-y-8"
       >
         <div className="flex items-start justify-between gap-6 flex-wrap">
           <div>
-            <div className="text-xs uppercase tracking-widest text-primary">
-              01 · Flagship
-            </div>
+            <div className="text-xs uppercase tracking-widest text-primary">01 · Flagship</div>
             <h2 className="mt-2 text-4xl md:text-5xl font-semibold">Makeke</h2>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              A B2B platform that connects bakeries and pastry producers with the
-              retailers, cafés and event vendors that need them — on-demand supply,
-              routed and fulfilled. Think logistics + marketplace for the cakes and
-              pastries economy, built for African cities.
+              A B2B platform that connects bakeries and pastry producers with the retailers, cafés
+              and event vendors that need them — on-demand supply, routed and fulfilled. Think
+              logistics + marketplace for the cakes and pastries economy, built for African cities.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 text-xs">
-              {[
-                "B2B marketplace",
-                "Realtime dispatch",
-                "Vendor & retailer roles",
-                "Payments",
-              ].map((t) => (
-                <span key={t} className="glass rounded-full px-3 py-1">
-                  {t}
-                </span>
-              ))}
+              {["B2B marketplace", "Realtime dispatch", "Vendor & retailer roles", "Payments"].map(
+                (t) => (
+                  <span key={t} className="glass rounded-full px-3 py-1">
+                    {t}
+                  </span>
+                ),
+              )}
             </div>
           </div>
         </div>
@@ -96,7 +95,13 @@ function Projects() {
               whileHover={{ scale: 1.01, y: -4 }}
               className="overflow-hidden rounded-2xl border border-glass-border"
             >
-              <img src={m} alt={`Makeke screen ${i + 1}`} className="w-full" />
+              <img
+                src={assetUrl(m.url)}
+                alt={`Makeke screen ${i + 1}`}
+                className="w-full"
+                loading="lazy"
+                decoding="async"
+              />
             </motion.div>
           ))}
         </div>
@@ -109,10 +114,10 @@ function Projects() {
             <video
               controls
               preload="metadata"
-              poster={makeke1}
+              poster={assetUrl(makeke1.url)}
               className="w-full aspect-video bg-black"
             >
-              <source src={makekeVideo} type="video/mp4" />
+              <source src={assetUrl(makekeVideo.url)} type="video/mp4" />
             </video>
           </div>
         </div>
@@ -122,21 +127,17 @@ function Projects() {
       <motion.section
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: false, margin: "-80px" }}
         className="glass-strong rounded-[2rem] p-6 md:p-10 space-y-8"
       >
         <div className="flex items-start justify-between gap-6 flex-wrap">
           <div>
-            <div className="text-xs uppercase tracking-widest text-accent">
-              02 · Live
-            </div>
-            <h2 className="mt-2 text-4xl md:text-5xl font-semibold">
-              Hit Campus Guide
-            </h2>
+            <div className="text-xs uppercase tracking-widest text-accent">02 · Live</div>
+            <h2 className="mt-2 text-4xl md:text-5xl font-semibold">Hit Campus Guide</h2>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              An interactive way-finder for the Harare Institute of Technology
-              campus — helping new students, visitors, and staff navigate lecture
-              halls, offices, and facilities with ease.
+              An interactive way-finder for the Harare Institute of Technology campus — helping new
+              students, visitors, and staff navigate lecture halls, offices, and facilities with
+              ease.
             </p>
           </div>
           <a
@@ -151,11 +152,11 @@ function Projects() {
 
         <HoverExpand
           images={[
-            { src: nav1, alt: "Hit Campus Guide — home", code: "01 · Home" },
-            { src: nav2, alt: "Hit Campus Guide — navigation", code: "02 · Nav" },
-            { src: nav3, alt: "Hit Campus Guide — detail", code: "03 · Detail" },
-            { src: nav1, alt: "Hit Campus Guide", code: "04" },
-            { src: nav2, alt: "Hit Campus Guide", code: "05" },
+            { src: assetUrl(nav1.url), alt: "Hit Campus Guide — home", code: "01 · Home" },
+            { src: assetUrl(nav2.url), alt: "Hit Campus Guide — navigation", code: "02 · Nav" },
+            { src: assetUrl(nav3.url), alt: "Hit Campus Guide — detail", code: "03 · Detail" },
+            { src: assetUrl(nav1.url), alt: "Hit Campus Guide", code: "04" },
+            { src: assetUrl(nav2.url), alt: "Hit Campus Guide", code: "05" },
           ]}
         />
       </motion.section>

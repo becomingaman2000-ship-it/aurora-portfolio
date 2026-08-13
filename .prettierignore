@@ -6,3 +6,17 @@ pnpm-lock.yaml
 package-lock.json
 bun.lock
 routeTree.gen.ts
+
+# Generated GitHub Pages export at the repo root (see scripts/build-pages.mjs)
+/index.html
+/404.html
+/sitemap.xml
+/robots.txt
+/favicon.ico
+/.nojekyll
+/assets/
+/about/index.html
+/services/index.html
+/projects/index.html
+/leadership/index.html
+/contact/index.html

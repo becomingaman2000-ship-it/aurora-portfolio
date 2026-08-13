@@ -1,19 +1,35 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import img from "@/assets/Eustace_Madawu_Photos/123379.jpg";
+import img from "@/assets/eustace-4.asset.json";
+import { absUrl, canonical, professionalServiceJsonLd } from "@/lib/site";
+import { assetUrl } from "@/lib/asset";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Eustace Madawu" },
+      { title: "Services — Hire a Software & Website Engineer | Eustace .T. Madawu" },
       {
         name: "description",
         content:
-          "Website engineering, software engineering, product design, data & business intelligence — plus counselling and event planning services.",
+          "Hire freelance engineer Eustace .T. Madawu: website engineering, software engineering, product design, databases, payments and data — remote worldwide, clear quotes.",
       },
-      { property: "og:title", content: "Services — Eustace Madawu" },
-      { property: "og:image", content: img },
-      { name: "twitter:image", content: img },
+      {
+        property: "og:title",
+        content: "Services — Hire a Software & Website Engineer | Eustace .T. Madawu",
+      },
+      { property: "og:url", content: absUrl("/services") },
+      { property: "og:image", content: absUrl(img.url) },
+      { name: "twitter:image", content: absUrl(img.url) },
+    ],
+    links: [canonical("/services")],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          ...professionalServiceJsonLd(),
+        }),
+      },
     ],
   }),
   component: Services,
@@ -49,11 +65,7 @@ const services = [
     tag: "Product",
     title: "Product Design & Strategy",
     desc: "From a napkin idea to a spec, a working prototype, and a shipped v1 — with tight revision cycles.",
-    bullets: [
-      "Discovery & requirements",
-      "UI/UX prototyping",
-      "Ship-and-iterate delivery",
-    ],
+    bullets: ["Discovery & requirements", "UI/UX prototyping", "Ship-and-iterate delivery"],
   },
   {
     id: "data",
@@ -67,22 +79,14 @@ const services = [
     tag: "People",
     title: "Counselling & Peer Support",
     desc: "Trained counsellor delivering confidential, empathetic support and leading peer-counselling programmes.",
-    bullets: [
-      "1:1 counselling sessions",
-      "Programme oversight",
-      "Confidentiality-first",
-    ],
+    bullets: ["1:1 counselling sessions", "Programme oversight", "Confidentiality-first"],
   },
   {
     id: "events",
     tag: "Events",
     title: "Event Planning & Organising",
     desc: "Large-scale events, university sports fixtures, and orientation programmes — smoothly delivered.",
-    bullets: [
-      "Logistics & scheduling",
-      "Registration & equipment",
-      "On-the-day coordination",
-    ],
+    bullets: ["Logistics & scheduling", "Registration & equipment", "On-the-day coordination"],
   },
 ];
 
@@ -98,8 +102,8 @@ function Services() {
             What I can do for <span className="text-gradient">your team.</span>
           </h1>
           <p className="text-muted-foreground text-base md:text-lg max-w-xl">
-            I mainly offer website and software engineering — with product design,
-            counselling and events on the side. Everything is built to ship.
+            I mainly offer website and software engineering — with product design, counselling and
+            events on the side. Everything is built to ship.
           </p>
           <Link
             to="/contact"
@@ -114,9 +118,10 @@ function Services() {
           className="glass-strong rounded-[2rem] p-2"
         >
           <img
-            src={img}
+            src={assetUrl(img.url)}
             alt="Eustace working"
             className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
+            decoding="async"
           />
         </motion.div>
       </section>
@@ -127,7 +132,7 @@ function Services() {
             key={s.id}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: false, margin: "-40px" }}
             transition={{ delay: i * 0.04 }}
             className="glass group rounded-3xl p-6 flex flex-col hover:-translate-y-1 transition"
           >

@@ -1,27 +1,30 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import img from "@/assets/Eustace_Madawu_Photos/123383.jpg";
+import img from "@/assets/eustace-5.asset.json";
 import { CONTACT_EMAIL, gmailCompose } from "@/lib/contact";
+import { absUrl, canonical } from "@/lib/site";
+import { assetUrl } from "@/lib/asset";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Eustace Madawu" },
+      { title: "Contact — Hire a Freelance Software & Website Engineer" },
       {
         name: "description",
         content:
-          "Get in touch with Eustace Madawu for engineering engagements, product builds, or leadership opportunities.",
+          "Contact Eustace .T. Madawu to hire a freelance software & website engineer: quotes, timelines and delivery plans — remote worldwide, based in Harare, Zimbabwe.",
       },
-      { property: "og:title", content: "Contact — Eustace Madawu" },
+      { property: "og:title", content: "Contact — Hire a Freelance Software & Website Engineer" },
       {
         property: "og:description",
-        content:
-          "Send a message straight from Gmail — engineering engagements, product builds and partnerships.",
+        content: "Get a quote for your website or software build — remote engagements worldwide.",
       },
-      { property: "og:image", content: img },
-      { name: "twitter:image", content: img },
+      { property: "og:url", content: absUrl("/contact") },
+      { property: "og:image", content: absUrl(img.url) },
+      { name: "twitter:image", content: absUrl(img.url) },
     ],
+    links: [canonical("/contact")],
   }),
   component: Contact,
 });
@@ -43,8 +46,8 @@ function Contact() {
           Let's <span className="text-gradient">build something.</span>
         </h1>
         <p className="text-muted-foreground text-base md:text-lg max-w-md">
-          Available for freelance engineering engagements, product builds,
-          industrial attachment, and founder partnerships.
+          Available for freelance engineering engagements, product builds, industrial attachment,
+          and founder partnerships.
         </p>
 
         <div className="space-y-3">
@@ -56,15 +59,11 @@ function Contact() {
             <div className="text-sm mt-1">{CONTACT_EMAIL}</div>
           </a>
           <div className="glass block rounded-2xl p-4">
-            <div className="text-[10px] uppercase tracking-widest text-primary">
-              Based in
-            </div>
+            <div className="text-[10px] uppercase tracking-widest text-primary">Based in</div>
             <div className="text-sm mt-1">Harare, Zimbabwe</div>
           </div>
           <div className="glass block rounded-2xl p-4">
-            <div className="text-[10px] uppercase tracking-widest text-primary">
-              Affiliation
-            </div>
+            <div className="text-[10px] uppercase tracking-widest text-primary">Affiliation</div>
             <div className="text-sm mt-1">
               Harare Institute of Technology — B.Tech (Hons) Electronic Commerce
             </div>
@@ -72,8 +71,7 @@ function Contact() {
         </div>
 
         <blockquote className="glass rounded-2xl p-5 text-sm italic text-muted-foreground border-l-2 border-primary">
-          "Bringing world-class engineering discipline and proven leadership to every
-          project."
+          "Bringing world-class engineering discipline and proven leadership to every project."
         </blockquote>
       </div>
 

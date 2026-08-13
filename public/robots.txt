@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://becomingaman2000-ship-it.github.io/aurora-portfolio/sitemap.xml

@@ -1,4 +1,4 @@
-export const CONTACT_EMAIL = "eustacemadawu1@gmail.com";
+export const CONTACT_EMAIL = "foreigncartelthe7nth@gmail.com";
 
 /** Gmail compose URL with my address pre-selected as the recipient. */
 export function gmailCompose(subject = "", body = "") {

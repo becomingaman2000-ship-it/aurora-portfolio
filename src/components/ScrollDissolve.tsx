@@ -1,18 +1,35 @@
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+
+/** Dissolve only on tablet/desktop widths — see below. */
+const ENABLE_QUERY = "(min-width: 768px)";
 
 /**
  * Dissolves blocks as they leave the reading band — content above (already
  * read) and below fades + blurs away, and re-materialises when scrolled back.
  * Uses one passive rAF-throttled scroll listener and writes only
  * opacity/filter/transform, so it stays smooth on long pages.
+ *
+ * PHONES: the effect is disabled entirely below 768px. Small viewports leave
+ * whole sections sitting inside the fade band, so copy got stuck semi-blurred
+ * and unreadable. Phone users get the normal reveal transitions instead.
  */
 export function ScrollDissolve({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
+    const mq = window.matchMedia(ENABLE_QUERY);
+    const apply = () => setEnabled(mq.matches);
+    apply(); // also covers first client render
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const root = ref.current;
     if (!root) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let frame = 0;
     let ready = false;
@@ -45,17 +62,16 @@ export function ScrollDissolve({ children }: { children: ReactNode }) {
         const center = r.top + r.height / 2;
         // 1 inside the reading band, ramping to 0 past the edges
         const topFade = Math.min(1, Math.max(0, (center + r.height * 0.35) / (vh * 0.42)));
-        const bottomFade = Math.min(
-          1,
-          Math.max(0, (vh * 1.05 - center) / (vh * 0.35)),
-        );
+        const bottomFade = Math.min(1, Math.max(0, (vh * 1.05 - center) / (vh * 0.35)));
         const v = Math.min(topFade, bottomFade);
         if (Math.abs(v - item.last) < 0.02) continue;
         item.last = v;
         item.el.style.opacity = String(0.05 + 0.95 * v);
         item.el.style.filter = v > 0.99 ? "none" : `blur(${((1 - v) * 8).toFixed(2)}px)`;
         item.el.style.transform =
-          v > 0.99 ? "none" : `translate3d(0, ${((1 - v) * 18).toFixed(2)}px, 0) scale(${(0.97 + 0.03 * v).toFixed(3)})`;
+          v > 0.99
+            ? "none"
+            : `translate3d(0, ${((1 - v) * 18).toFixed(2)}px, 0) scale(${(0.97 + 0.03 * v).toFixed(3)})`;
       }
     };
 
@@ -100,7 +116,7 @@ export function ScrollDissolve({ children }: { children: ReactNode }) {
         item.el.style.willChange = "";
       }
     };
-  }, []);
+  }, [enabled]);
 
   return <div ref={ref}>{children}</div>;
 }

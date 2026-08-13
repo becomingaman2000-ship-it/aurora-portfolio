@@ -1,0 +1,40 @@
+# Eustace .T. Madawu — Freelance Software & Website Engineer
+
+> Eustace .T. Madawu is a freelance software & website engineer from Harare,
+> Zimbabwe, working remotely with clients worldwide. He designs, builds and
+> ships full-stack websites, web applications and products end-to-end:
+> UI/UX, frontend, backend, databases, payments and deployment.
+
+Hire him: email foreigncartelthe7nth@gmail.com with your idea and scope for a
+quote and timeline.
+
+## Key facts
+
+- Role: Freelance Software & Website Engineer (remote, worldwide)
+- Based in: Harare, Zimbabwe
+- Also: technopreneur, trained counsellor, event organiser
+- Education: B.Tech (Hons) Electronic Commerce, Harare Institute of Technology
+- Languages: English, Shona, Mandarin (business)
+- Stack: React, TypeScript, Node.js, TanStack Start, Tailwind CSS,
+  SQL/NoSQL databases, payment integrations, cloud deployment
+
+## Products (shipped & live)
+
+- Makeke — B2B logistics & marketplace platform connecting bakeries/pastry
+  producers with retailers, cafés and event vendors in African cities.
+- Hit Campus Guide — interactive way-finder for the Harare Institute of
+  Technology campus: https://becomingaman2000-ship-it.github.io/hitarnav/
+
+## Pages
+
+- Home: https://becomingaman2000-ship-it.github.io/aurora-portfolio/
+- About: https://becomingaman2000-ship-it.github.io/aurora-portfolio/about
+- Services: https://becomingaman2000-ship-it.github.io/aurora-portfolio/services
+- Projects: https://becomingaman2000-ship-it.github.io/aurora-portfolio/projects
+- Leadership: https://becomingaman2000-ship-it.github.io/aurora-portfolio/leadership
+- Contact: https://becomingaman2000-ship-it.github.io/aurora-portfolio/contact
+- Sitemap: https://becomingaman2000-ship-it.github.io/aurora-portfolio/sitemap.xml
+
+## Links
+
+- GitHub: https://github.com/becomingaman2000-ship-it

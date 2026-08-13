@@ -1,20 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import img from "@/assets/Eustace_Madawu_Photos/123386.jpg";
+import img from "@/assets/eustace-6.asset.json";
+import { absUrl, canonical } from "@/lib/site";
+import { assetUrl } from "@/lib/asset";
 
 export const Route = createFileRoute("/leadership")({
   head: () => ({
     meta: [
-      { title: "Leadership — Eustace Madawu" },
+      { title: "Leadership & Community — Eustace .T. Madawu" },
       {
         name: "description",
         content:
           "Trusted with people, programmes, and institutional responsibility — counselling, head-boy leadership, and event organising.",
       },
-      { property: "og:title", content: "Leadership — Eustace Madawu" },
-      { property: "og:image", content: img },
-      { name: "twitter:image", content: img },
+      { property: "og:title", content: "Leadership & Community — Eustace .T. Madawu" },
+      { property: "og:url", content: absUrl("/leadership") },
+      { property: "og:image", content: absUrl(img.url) },
+      { name: "twitter:image", content: absUrl(img.url) },
     ],
+    links: [canonical("/leadership")],
   }),
   component: Leadership,
 });
@@ -68,9 +72,10 @@ function Leadership() {
           className="glass-strong rounded-[2rem] p-2"
         >
           <img
-            src={img}
+            src={assetUrl(img.url)}
             alt="Eustace in leadership setting"
             className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
+            decoding="async"
           />
         </motion.div>
         <div className="space-y-5">
@@ -81,9 +86,9 @@ function Leadership() {
             Trusted with <span className="text-gradient">people & programmes.</span>
           </h1>
           <p className="text-muted-foreground text-base md:text-lg max-w-xl">
-            A rare combination of technical depth and people leadership — certified
-            counsellor, programme overseer, and event organiser with a track record of
-            institutional responsibility.
+            A rare combination of technical depth and people leadership — certified counsellor,
+            programme overseer, and event organiser with a track record of institutional
+            responsibility.
           </p>
         </div>
       </section>
@@ -94,13 +99,11 @@ function Leadership() {
             key={r.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: false, margin: "-40px" }}
             transition={{ delay: i * 0.05 }}
             className="glass rounded-3xl p-6 space-y-3"
           >
-            <div className="text-xs uppercase tracking-widest text-primary">
-              0{i + 1} · Role
-            </div>
+            <div className="text-xs uppercase tracking-widest text-primary">0{i + 1} · Role</div>
             <h3 className="text-xl font-semibold">{r.title}</h3>
             <div className="text-sm text-muted-foreground italic">{r.org}</div>
             <ul className="space-y-2 text-sm pt-2">
@@ -116,9 +119,7 @@ function Leadership() {
       </section>
 
       <section className="glass-strong rounded-[2rem] p-8 md:p-12 text-center">
-        <div className="text-xs uppercase tracking-widest text-primary">
-          Personal attributes
-        </div>
+        <div className="text-xs uppercase tracking-widest text-primary">Personal attributes</div>
         <div className="mt-4 flex flex-wrap gap-2 justify-center">
           {[
             "Highly Dependable",

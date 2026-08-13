@@ -23,7 +23,7 @@ export function LoopText({ words, className }: { words: string[]; className?: st
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: "-100%" }}
           transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
-          className="text-gradient inline-block whitespace-nowrap"
+          className="text-gradient inline-block whitespace-normal sm:whitespace-nowrap"
         >
           {current}
         </motion.span>

@@ -1,0 +1,54 @@
+1
+00:00:01,500 --> 00:00:03,720
+Some portfolios tell you what someone can do.
+
+2
+00:00:04,250 --> 00:00:05,250
+This one shows you.
+
+3
+00:00:05,700 --> 00:00:10,650
+Meet Eustace Madawu — software engineer, product builder,
+and people-first leader from Harare.
+
+4
+00:00:11,200 --> 00:00:16,950
+Move through a digital experience designed like the work itself:
+clear, responsive, and built with intent.
+
+5
+00:00:17,500 --> 00:00:21,900
+Explore full-stack engineering, product strategy,
+data, and automation.
+
+6
+00:00:22,400 --> 00:00:26,800
+See Makeke turn fragmented bakery supply
+into one connected marketplace.
+
+7
+00:00:27,200 --> 00:00:34,500
+Watch Hit Campus Guide make every destination easier to find.
+
+8
+00:00:34,800 --> 00:00:38,950
+Discover leadership grounded in people,
+programmes, and real responsibility.
+
+9
+00:00:39,000 --> 00:00:41,950
+Change the mood. Follow the flow.
+Start a conversation in seconds.
+
+10
+00:00:42,000 --> 00:00:43,950
+This is more than a portfolio.
+
+11
+00:00:44,000 --> 00:00:46,300
+It is proof of execution —
+from idea, to interface, to impact.
+
+12
+00:00:46,300 --> 00:00:48,000
+Eustace Madawu. Build what comes next.

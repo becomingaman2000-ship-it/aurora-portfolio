@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import profile from "@/assets/profile-main.asset.json";
+import portfolioVideo from "../../deliverables/portfolio-ad-v2/eustace-madawu-cinematic-ad.mp4";
+import portfolioVideoPoster from "../../deliverables/portfolio-ad-v2/scenes/01-portrait.jpg";
+import portfolioVideoCaptions from "../../deliverables/portfolio-ad-v2/captions-v2.srt?url";
 import { LoopText } from "@/components/LoopText";
 import { ExpandingPill } from "@/components/ExpandingPill";
 import { CONTACT_EMAIL, GMAIL_COMPOSE } from "@/lib/contact";
@@ -86,9 +89,9 @@ function Home() {
             />
           </h1>
           <p className="max-w-xl text-base md:text-lg text-muted-foreground">
-            I'm <b className="text-foreground">Eustace .T. Madawu</b> — a software & website engineer,
-            technopreneur, trained counsellor and event organiser from Harare, Zimbabwe. I design
-            and ship full-stack products end-to-end.
+            I'm <b className="text-foreground">Eustace .T. Madawu</b> — a software & website
+            engineer, technopreneur, trained counsellor and event organiser from Harare, Zimbabwe. I
+            design and ship full-stack products end-to-end.
           </p>
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <Link
@@ -162,6 +165,56 @@ function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section aria-labelledby="portfolio-film-title" className="relative mt-24">
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-[12%] top-20 h-2/3 rounded-full bg-primary/20 blur-3xl"
+        />
+
+        <div className="relative mb-7 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <span className="glass inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs uppercase tracking-widest text-muted-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+              Cinematic profile · 56 seconds
+            </span>
+            <h2
+              id="portfolio-film-title"
+              className="mt-4 font-display text-3xl font-semibold sm:text-4xl md:text-5xl"
+            >
+              Build what comes <span className="text-gradient">next.</span>
+            </h2>
+          </div>
+          <p className="max-w-md text-sm leading-relaxed text-muted-foreground md:text-right">
+            A cinematic look at the engineering, products, and people-first leadership behind the
+            portfolio — from idea, to interface, to impact.
+          </p>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}
+          className="glass-strong relative overflow-hidden rounded-[1.75rem] p-2 sm:rounded-[2.25rem] sm:p-3"
+        >
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            poster={portfolioVideoPoster}
+            aria-label="Cinematic profile of Eustace .T. Madawu's engineering, products, and leadership"
+            className="aspect-video w-full rounded-[1.25rem] bg-black object-cover sm:rounded-[1.65rem]"
+          >
+            <source src={portfolioVideo} type="video/mp4" />
+            <track kind="captions" src={portfolioVideoCaptions} srcLang="en" label="English" />
+            Your browser does not support embedded video.{" "}
+            <a href={portfolioVideo} download>
+              Download the cinematic profile instead.
+            </a>
+          </video>
+        </motion.div>
       </section>
 
       <section className="mt-24 grid gap-4 md:grid-cols-3">

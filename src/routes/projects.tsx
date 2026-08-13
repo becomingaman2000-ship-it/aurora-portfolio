@@ -1,13 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { HoverExpand } from "@/components/HoverExpand";
-import makeke1 from "@/assets/makeke-1.asset.json";
-import makeke2 from "@/assets/makeke-2.asset.json";
-import makekeVideo from "@/assets/makeke-pitch.asset.json";
-import nav1 from "@/assets/nav-1.asset.json";
-import nav2 from "@/assets/nav-2.asset.json";
-import nav3 from "@/assets/nav-3.asset.json";
-import img from "@/assets/eustace-5.asset.json";
+import makeke1 from "@/assets/projects/Makeke1.PNG";
+import makeke2 from "@/assets/projects/Makeke 2.PNG";
+import makekeVideo from "@/assets/Makeke-pitch.mp4";
+import nav1 from "@/assets/projects/nav.PNG";
+import nav2 from "@/assets/projects/nav2.PNG";
+import nav3 from "@/assets/projects/nav3.PNG";
+import img from "@/assets/Eustace_Madawu_Photos/123383.jpg";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -19,8 +19,8 @@ export const Route = createFileRoute("/projects")({
           "Selected work: Makeke — a B2B logistics platform for bakeries — and Hit Campus Guide.",
       },
       { property: "og:title", content: "Projects — Eustace Madawu" },
-      { property: "og:image", content: makeke1.url },
-      { name: "twitter:image", content: makeke1.url },
+      { property: "og:image", content: makeke1 },
+      { name: "twitter:image", content: makeke1 },
     ],
   }),
   component: Projects,
@@ -48,7 +48,7 @@ function Projects() {
           className="glass-strong rounded-[2rem] p-2"
         >
           <img
-            src={img.url}
+            src={img}
             alt="Eustace presenting"
             className="w-full aspect-[4/5] rounded-[1.6rem] object-cover"
           />
@@ -96,7 +96,7 @@ function Projects() {
               whileHover={{ scale: 1.01, y: -4 }}
               className="overflow-hidden rounded-2xl border border-glass-border"
             >
-              <img src={m.url} alt={`Makeke screen ${i + 1}`} className="w-full" />
+              <img src={m} alt={`Makeke screen ${i + 1}`} className="w-full" />
             </motion.div>
           ))}
         </div>
@@ -109,10 +109,10 @@ function Projects() {
             <video
               controls
               preload="metadata"
-              poster={makeke1.url}
+              poster={makeke1}
               className="w-full aspect-video bg-black"
             >
-              <source src={makekeVideo.url} type="video/mp4" />
+              <source src={makekeVideo} type="video/mp4" />
             </video>
           </div>
         </div>
@@ -151,11 +151,11 @@ function Projects() {
 
         <HoverExpand
           images={[
-            { src: nav1.url, alt: "Hit Campus Guide — home", code: "01 · Home" },
-            { src: nav2.url, alt: "Hit Campus Guide — navigation", code: "02 · Nav" },
-            { src: nav3.url, alt: "Hit Campus Guide — detail", code: "03 · Detail" },
-            { src: nav1.url, alt: "Hit Campus Guide", code: "04" },
-            { src: nav2.url, alt: "Hit Campus Guide", code: "05" },
+            { src: nav1, alt: "Hit Campus Guide — home", code: "01 · Home" },
+            { src: nav2, alt: "Hit Campus Guide — navigation", code: "02 · Nav" },
+            { src: nav3, alt: "Hit Campus Guide — detail", code: "03 · Detail" },
+            { src: nav1, alt: "Hit Campus Guide", code: "04" },
+            { src: nav2, alt: "Hit Campus Guide", code: "05" },
           ]}
         />
       </motion.section>

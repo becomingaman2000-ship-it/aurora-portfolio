@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import img from "@/assets/eustace-5.asset.json";
+import img from "@/assets/Eustace_Madawu_Photos/123383.jpg";
 import { CONTACT_EMAIL, gmailCompose } from "@/lib/contact";
 
 export const Route = createFileRoute("/contact")({
@@ -19,8 +19,8 @@ export const Route = createFileRoute("/contact")({
         content:
           "Send a message straight from Gmail — engineering engagements, product builds and partnerships.",
       },
-      { property: "og:image", content: img.url },
-      { name: "twitter:image", content: img.url },
+      { property: "og:image", content: img },
+      { name: "twitter:image", content: img },
     ],
   }),
   component: Contact,

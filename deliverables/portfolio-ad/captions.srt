@@ -1,0 +1,43 @@
+1
+00:00:00,000 --> 00:00:06,600
+Meet Eustace Madawu — a software and website engineer,
+product builder, and people-focused leader from Harare, Zimbabwe.
+
+2
+00:00:06,600 --> 00:00:13,200
+Start on a clear, animated home page, then move through
+his story, technical expertise, and experience.
+
+3
+00:00:13,200 --> 00:00:23,100
+Explore services built for real business needs: modern websites,
+custom software, product strategy, data reporting, and workflow automation.
+
+4
+00:00:23,100 --> 00:00:25,400
+See shipped work in action.
+
+5
+00:00:25,400 --> 00:00:37,900
+Makeke connects bakeries and pastry producers with retailers,
+cafés, and event vendors through an on-demand business marketplace.
+
+6
+00:00:37,900 --> 00:00:44,600
+Hit Campus Guide helps students, staff, and visitors
+find their way around campus with ease.
+
+7
+00:00:44,600 --> 00:00:49,500
+Discover proven leadership in counselling,
+student programmes, and event coordination.
+
+8
+00:00:49,500 --> 00:00:57,300
+Switch between elegant visual themes, then follow one simple contact flow:
+enter your name, describe the project, and open a ready-to-send Gmail message.
+
+9
+00:00:57,300 --> 00:01:00,000
+Eustace Madawu. Engineering ideas into polished,
+practical digital experiences. Ready to build something?

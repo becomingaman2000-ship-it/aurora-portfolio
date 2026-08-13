@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import profile from "@/assets/profile-main.asset.json";
+import profile from "@/assets/Eustace_Madawu_Photos/123375.jpg";
 import { LoopText } from "@/components/LoopText";
 import { ExpandingPill } from "@/components/ExpandingPill";
 import { CONTACT_EMAIL, GMAIL_COMPOSE } from "@/lib/contact";
@@ -9,8 +9,8 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Eustace Madawu — Software & Website Engineer" },
-      { property: "og:image", content: profile.url },
-      { name: "twitter:image", content: profile.url },
+      { property: "og:image", content: profile },
+      { name: "twitter:image", content: profile },
     ],
   }),
   component: Home,
@@ -112,7 +112,7 @@ function Home() {
             />
             <div className="glass-strong relative overflow-hidden rounded-[2.5rem] p-2">
               <img
-                src={profile.url}
+                src={profile}
                 alt="Eustace Madawu portrait"
                 className="h-full w-full rounded-[2rem] object-cover"
               />
